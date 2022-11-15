@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "dccde747e13d6f4e64d9b0641b223602754713829295f4318d69819c40865dbe"
+build_start_time: [1668527314, 552936077]
+build_end_time: [1668527314, 589528083]
+inputs:
+  "/Users/anmolverma/IdeaProjects/SlackComposeMultiplatform/capillary_kmp/capillaryios/capillaryios/capillaryios.swift": !dirty [1668516204, 715311527]
