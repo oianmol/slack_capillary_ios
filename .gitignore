@@ -160,3 +160,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+/Pods/
+/capillaryios.xcodeproj/xcuserdata/
