@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8950D5DD2923C0C50030FE7F /* capillaryios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8950D5DC2923C0C50030FE7F /* capillaryios.swift */; };
+		89B780A32924A07600F40435 /* SwiftyRSA in Frameworks */ = {isa = PBXBuildFile; productRef = 89B780A22924A07600F40435 /* SwiftyRSA */; };
+		89B780A52924A10B00F40435 /* RSAKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B780A42924A10B00F40435 /* RSAKeyManager.swift */; };
+		89B780A72924A14300F40435 /* CryptoExportImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B780A62924A14300F40435 /* CryptoExportImportManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +29,8 @@
 		8950D5DC2923C0C50030FE7F /* capillaryios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = capillaryios.swift; sourceTree = "<group>"; };
 		89B4386F2923B4ED00581DA2 /* libcapillaryios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcapillaryios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B438792923B4FF00581DA2 /* capillaryios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "capillaryios-Bridging-Header.h"; sourceTree = "<group>"; };
+		89B780A42924A10B00F40435 /* RSAKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAKeyManager.swift; sourceTree = "<group>"; };
+		89B780A62924A14300F40435 /* CryptoExportImportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoExportImportManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B780A32924A07600F40435 /* SwiftyRSA in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +66,8 @@
 			children = (
 				8950D5DC2923C0C50030FE7F /* capillaryios.swift */,
 				89B438792923B4FF00581DA2 /* capillaryios-Bridging-Header.h */,
+				89B780A42924A10B00F40435 /* RSAKeyManager.swift */,
+				89B780A62924A14300F40435 /* CryptoExportImportManager.swift */,
 			);
 			path = capillaryios;
 			sourceTree = "<group>";
@@ -81,6 +89,9 @@
 			dependencies = (
 			);
 			name = capillaryios;
+			packageProductDependencies = (
+				89B780A22924A07600F40435 /* SwiftyRSA */,
+			);
 			productName = capillaryios;
 			productReference = 89B4386F2923B4ED00581DA2 /* libcapillaryios.a */;
 			productType = "com.apple.product-type.library.static";
@@ -110,6 +121,9 @@
 				Base,
 			);
 			mainGroup = 89B438662923B4ED00581DA2;
+			packageReferences = (
+				89B780A12924A07600F40435 /* XCRemoteSwiftPackageReference "SwiftyRSA" */,
+			);
 			productRefGroup = 89B438702923B4ED00581DA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -144,6 +158,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B780A72924A14300F40435 /* CryptoExportImportManager.swift in Sources */,
+				89B780A52924A10B00F40435 /* RSAKeyManager.swift in Sources */,
 				8950D5DD2923C0C50030FE7F /* capillaryios.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +344,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		89B780A12924A07600F40435 /* XCRemoteSwiftPackageReference "SwiftyRSA" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TakeScoop/SwiftyRSA";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		89B780A22924A07600F40435 /* SwiftyRSA */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89B780A12924A07600F40435 /* XCRemoteSwiftPackageReference "SwiftyRSA" */;
+			productName = SwiftyRSA;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89B438672923B4ED00581DA2 /* Project object */;
 }
