@@ -11,6 +11,7 @@
 		8950D5DD2923C0C50030FE7F /* capillaryios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8950D5DC2923C0C50030FE7F /* capillaryios.swift */; };
 		89B780A52924A10B00F40435 /* RSAKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B780A42924A10B00F40435 /* RSAKeyManager.swift */; };
 		89B780A72924A14300F40435 /* CryptoExportImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B780A62924A14300F40435 /* CryptoExportImportManager.swift */; };
+		89C0CA262924FC7600457467 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C0CA252924FC7600457467 /* SwiftyRSA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		89B438792923B4FF00581DA2 /* capillaryios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "capillaryios-Bridging-Header.h"; sourceTree = "<group>"; };
 		89B780A42924A10B00F40435 /* RSAKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAKeyManager.swift; sourceTree = "<group>"; };
 		89B780A62924A14300F40435 /* CryptoExportImportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoExportImportManager.swift; sourceTree = "<group>"; };
+		89C0CA202924FA8600457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C0CA252924FC7600457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C0CA262924FC7600457467 /* SwiftyRSA.framework in Frameworks */,
 				5106503B74A4B95A7DF682A9 /* Pods_capillaryios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +93,8 @@
 		DBBDFF30D46093802541E736 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89C0CA252924FC7600457467 /* SwiftyRSA.framework */,
+				89C0CA202924FA8600457467 /* SwiftyRSA.framework */,
 				7517511F1F3CB079C4052C53 /* Pods_capillaryios.framework */,
 			);
 			name = Frameworks;
@@ -112,6 +118,8 @@
 			dependencies = (
 			);
 			name = capillaryios;
+			packageProductDependencies = (
+			);
 			productName = capillaryios;
 			productReference = 89B4386F2923B4ED00581DA2 /* libcapillaryios.a */;
 			productType = "com.apple.product-type.library.static";
@@ -141,6 +149,8 @@
 				Base,
 			);
 			mainGroup = 89B438662923B4ED00581DA2;
+			packageReferences = (
+			);
 			productRefGroup = 89B438702923B4ED00581DA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -329,6 +339,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P3R865242N;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,6 +362,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P3R865242N;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
