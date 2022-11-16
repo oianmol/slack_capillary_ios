@@ -112,7 +112,6 @@ class RSAKeyManager {
         ]
         
         let status = SecKeyGeneratePair(parameters as CFDictionary, &publicKey, &privateKey)
-        self.updatePublicKey()
         
         if status != noErr {
             //Log Error
