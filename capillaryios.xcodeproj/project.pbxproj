@@ -11,8 +11,37 @@
 		8950D5DD2923C0C50030FE7F /* capillaryios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8950D5DC2923C0C50030FE7F /* capillaryios.swift */; };
 		89B780A52924A10B00F40435 /* RSAKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B780A42924A10B00F40435 /* RSAKeyManager.swift */; };
 		89B780A72924A14300F40435 /* CryptoExportImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B780A62924A14300F40435 /* CryptoExportImportManager.swift */; };
+		89C0CA6F2925F0D200457467 /* TestCapillaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0CA6E2925F0D200457467 /* TestCapillaryApp.swift */; };
+		89C0CA712925F0D200457467 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0CA702925F0D200457467 /* ContentView.swift */; };
+		89C0CA732925F0D300457467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C0CA722925F0D300457467 /* Assets.xcassets */; };
+		89C0CA762925F0D300457467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C0CA752925F0D300457467 /* Preview Assets.xcassets */; };
+		89C0CA802925F0D400457467 /* TestCapillaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0CA7F2925F0D400457467 /* TestCapillaryTests.swift */; };
+		89C0CA8A2925F0D400457467 /* TestCapillaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0CA892925F0D400457467 /* TestCapillaryUITests.swift */; };
+		89C0CA8C2925F0D400457467 /* TestCapillaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0CA8B2925F0D400457467 /* TestCapillaryUITestsLaunchTests.swift */; };
+		89C0CAAF2925F4A600457467 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C0CAA22925F3B300457467 /* SwiftyRSA.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		89C0CAB02925F4A600457467 /* SwiftyRSA.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89C0CAA22925F3B300457467 /* SwiftyRSA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		89C0CAB22925F4B900457467 /* Pods_capillaryios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C0CAB12925F4B800457467 /* Pods_capillaryios.framework */; };
+		89C0CAB32925F4B900457467 /* Pods_capillaryios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89C0CAB12925F4B800457467 /* Pods_capillaryios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		89C0CAB42925F52000457467 /* libcapillaryios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B4386F2923B4ED00581DA2 /* libcapillaryios.a */; };
 		89D0E25B2925211400DA679C /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D0E25A2925211400DA679C /* SwiftyRSA.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89C0CA7C2925F0D400457467 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89B438672923B4ED00581DA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89C0CA6B2925F0D200457467;
+			remoteInfo = TestCapillary;
+		};
+		89C0CA862925F0D400457467 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89B438672923B4ED00581DA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89C0CA6B2925F0D200457467;
+			remoteInfo = TestCapillary;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		89B4386D2923B4ED00581DA2 /* CopyFiles */ = {
@@ -22,6 +51,18 @@
 			dstSubfolderSpec = 16;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C0CAA82925F48900457467 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				89C0CAB32925F4B900457467 /* Pods_capillaryios.framework in Embed Frameworks */,
+				89C0CAB02925F4A600457467 /* SwiftyRSA.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -37,6 +78,24 @@
 		89B780A62924A14300F40435 /* CryptoExportImportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoExportImportManager.swift; sourceTree = "<group>"; };
 		89C0CA202924FA8600457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C0CA252924FC7600457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C0CA6C2925F0D200457467 /* TestCapillary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCapillary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C0CA6E2925F0D200457467 /* TestCapillaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCapillaryApp.swift; sourceTree = "<group>"; };
+		89C0CA702925F0D200457467 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		89C0CA722925F0D300457467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89C0CA752925F0D300457467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		89C0CA7B2925F0D400457467 /* TestCapillaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCapillaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C0CA7F2925F0D400457467 /* TestCapillaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCapillaryTests.swift; sourceTree = "<group>"; };
+		89C0CA852925F0D400457467 /* TestCapillaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCapillaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C0CA892925F0D400457467 /* TestCapillaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCapillaryUITests.swift; sourceTree = "<group>"; };
+		89C0CA8B2925F0D400457467 /* TestCapillaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCapillaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		89C0CA962925F19700457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C0CA9A2925F1B900457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C0CA9E2925F38800457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C0CAA12925F3B300457467 /* SwiftyRSA.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = SwiftyRSA.framework.dSYM; sourceTree = "<group>"; };
+		89C0CAA22925F3B300457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = "<group>"; };
+		89C0CAA52925F48900457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C0CAA92925F48C00457467 /* Pods_capillaryios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_capillaryios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C0CAB12925F4B800457467 /* Pods_capillaryios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_capillaryios.framework; path = "build/Build/Products/Release-iphonesimulator/Pods_capillaryios.framework"; sourceTree = "<group>"; };
 		89D0E25A2925211400DA679C /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -50,6 +109,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		89C0CA692925F0D200457467 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C0CAB42925F52000457467 /* libcapillaryios.a in Frameworks */,
+				89C0CAB22925F4B900457467 /* Pods_capillaryios.framework in Frameworks */,
+				89C0CAAF2925F4A600457467 /* SwiftyRSA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C0CA782925F0D400457467 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C0CA822925F0D400457467 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				89B438712923B4ED00581DA2 /* capillaryios */,
+				89C0CA6D2925F0D200457467 /* TestCapillary */,
+				89C0CA7E2925F0D400457467 /* TestCapillaryTests */,
+				89C0CA882925F0D400457467 /* TestCapillaryUITests */,
 				89B438702923B4ED00581DA2 /* Products */,
 				998EC770793059773FB772CD /* Pods */,
 				DBBDFF30D46093802541E736 /* Frameworks */,
@@ -67,6 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				89B4386F2923B4ED00581DA2 /* libcapillaryios.a */,
+				89C0CA6C2925F0D200457467 /* TestCapillary.app */,
+				89C0CA7B2925F0D400457467 /* TestCapillaryTests.xctest */,
+				89C0CA852925F0D400457467 /* TestCapillaryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +171,52 @@
 			path = capillaryios;
 			sourceTree = "<group>";
 		};
+		89C0CA6D2925F0D200457467 /* TestCapillary */ = {
+			isa = PBXGroup;
+			children = (
+				89C0CA6E2925F0D200457467 /* TestCapillaryApp.swift */,
+				89C0CA702925F0D200457467 /* ContentView.swift */,
+				89C0CA722925F0D300457467 /* Assets.xcassets */,
+				89C0CA742925F0D300457467 /* Preview Content */,
+			);
+			path = TestCapillary;
+			sourceTree = "<group>";
+		};
+		89C0CA742925F0D300457467 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				89C0CA752925F0D300457467 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		89C0CA7E2925F0D400457467 /* TestCapillaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				89C0CA7F2925F0D400457467 /* TestCapillaryTests.swift */,
+			);
+			path = TestCapillaryTests;
+			sourceTree = "<group>";
+		};
+		89C0CA882925F0D400457467 /* TestCapillaryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				89C0CA892925F0D400457467 /* TestCapillaryUITests.swift */,
+				89C0CA8B2925F0D400457467 /* TestCapillaryUITestsLaunchTests.swift */,
+			);
+			path = TestCapillaryUITests;
+			sourceTree = "<group>";
+		};
+		89C0CAA02925F3B300457467 /* SwiftyRSA */ = {
+			isa = PBXGroup;
+			children = (
+				89C0CAA12925F3B300457467 /* SwiftyRSA.framework.dSYM */,
+				89C0CAA22925F3B300457467 /* SwiftyRSA.framework */,
+			);
+			name = SwiftyRSA;
+			path = "build/Build/Products/Release-iphonesimulator/SwiftyRSA";
+			sourceTree = "<group>";
+		};
 		998EC770793059773FB772CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +229,13 @@
 		DBBDFF30D46093802541E736 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89C0CAA92925F48C00457467 /* Pods_capillaryios.framework */,
+				89C0CAB12925F4B800457467 /* Pods_capillaryios.framework */,
+				89C0CAA52925F48900457467 /* SwiftyRSA.framework */,
+				89C0CAA02925F3B300457467 /* SwiftyRSA */,
+				89C0CA9E2925F38800457467 /* SwiftyRSA.framework */,
+				89C0CA9A2925F1B900457467 /* SwiftyRSA.framework */,
+				89C0CA962925F19700457467 /* SwiftyRSA.framework */,
 				89D0E25A2925211400DA679C /* SwiftyRSA.framework */,
 				89C0CA252924FC7600457467 /* SwiftyRSA.framework */,
 				89C0CA202924FA8600457467 /* SwiftyRSA.framework */,
@@ -126,6 +268,60 @@
 			productReference = 89B4386F2923B4ED00581DA2 /* libcapillaryios.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		89C0CA6B2925F0D200457467 /* TestCapillary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89C0CA8D2925F0D400457467 /* Build configuration list for PBXNativeTarget "TestCapillary" */;
+			buildPhases = (
+				89C0CA682925F0D200457467 /* Sources */,
+				89C0CA692925F0D200457467 /* Frameworks */,
+				89C0CA6A2925F0D200457467 /* Resources */,
+				89C0CAA82925F48900457467 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestCapillary;
+			productName = TestCapillary;
+			productReference = 89C0CA6C2925F0D200457467 /* TestCapillary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89C0CA7A2925F0D400457467 /* TestCapillaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89C0CA902925F0D400457467 /* Build configuration list for PBXNativeTarget "TestCapillaryTests" */;
+			buildPhases = (
+				89C0CA772925F0D400457467 /* Sources */,
+				89C0CA782925F0D400457467 /* Frameworks */,
+				89C0CA792925F0D400457467 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89C0CA7D2925F0D400457467 /* PBXTargetDependency */,
+			);
+			name = TestCapillaryTests;
+			productName = TestCapillaryTests;
+			productReference = 89C0CA7B2925F0D400457467 /* TestCapillaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		89C0CA842925F0D400457467 /* TestCapillaryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89C0CA932925F0D400457467 /* Build configuration list for PBXNativeTarget "TestCapillaryUITests" */;
+			buildPhases = (
+				89C0CA812925F0D400457467 /* Sources */,
+				89C0CA822925F0D400457467 /* Frameworks */,
+				89C0CA832925F0D400457467 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89C0CA872925F0D400457467 /* PBXTargetDependency */,
+			);
+			name = TestCapillaryUITests;
+			productName = TestCapillaryUITests;
+			productReference = 89C0CA852925F0D400457467 /* TestCapillaryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -139,6 +335,17 @@
 					89B4386E2923B4ED00581DA2 = {
 						CreatedOnToolsVersion = 14.1;
 						LastSwiftMigration = 1410;
+					};
+					89C0CA6B2925F0D200457467 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					89C0CA7A2925F0D400457467 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 89C0CA6B2925F0D200457467;
+					};
+					89C0CA842925F0D400457467 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 89C0CA6B2925F0D200457467;
 					};
 				};
 			};
@@ -158,9 +365,38 @@
 			projectRoot = "";
 			targets = (
 				89B4386E2923B4ED00581DA2 /* capillaryios */,
+				89C0CA6B2925F0D200457467 /* TestCapillary */,
+				89C0CA7A2925F0D400457467 /* TestCapillaryTests */,
+				89C0CA842925F0D400457467 /* TestCapillaryUITests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89C0CA6A2925F0D200457467 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C0CA762925F0D300457467 /* Preview Assets.xcassets in Resources */,
+				89C0CA732925F0D300457467 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C0CA792925F0D400457467 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C0CA832925F0D400457467 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		89B4387F2923B52500581DA2 /* ShellScript */ = {
@@ -215,7 +451,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		89C0CA682925F0D200457467 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C0CA712925F0D200457467 /* ContentView.swift in Sources */,
+				89C0CA6F2925F0D200457467 /* TestCapillaryApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C0CA772925F0D400457467 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C0CA802925F0D400457467 /* TestCapillaryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89C0CA812925F0D400457467 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C0CA8C2925F0D400457467 /* TestCapillaryUITestsLaunchTests.swift in Sources */,
+				89C0CA8A2925F0D400457467 /* TestCapillaryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89C0CA7D2925F0D400457467 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89C0CA6B2925F0D200457467 /* TestCapillary */;
+			targetProxy = 89C0CA7C2925F0D400457467 /* PBXContainerItemProxy */;
+		};
+		89C0CA872925F0D400457467 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89C0CA6B2925F0D200457467 /* TestCapillary */;
+			targetProxy = 89C0CA862925F0D400457467 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		89B438742923B4ED00581DA2 /* Debug */ = {
@@ -379,6 +654,154 @@
 			};
 			name = Release;
 		};
+		89C0CA8E2925F0D400457467 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TestCapillary/Preview Content\"";
+				DEVELOPMENT_TEAM = S4G3GQXM69;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Build/Products/Release-iphonesimulator/SwiftyRSA",
+					"$(PROJECT_DIR)/build/Build/Products/Release-iphonesimulator",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.capillary.TestCapillary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89C0CA8F2925F0D400457467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TestCapillary/Preview Content\"";
+				DEVELOPMENT_TEAM = S4G3GQXM69;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Build/Products/Release-iphonesimulator/SwiftyRSA",
+					"$(PROJECT_DIR)/build/Build/Products/Release-iphonesimulator",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.capillary.TestCapillary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		89C0CA912925F0D400457467 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S4G3GQXM69;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.capillary.TestCapillaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestCapillary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestCapillary";
+			};
+			name = Debug;
+		};
+		89C0CA922925F0D400457467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S4G3GQXM69;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.capillary.TestCapillaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestCapillary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestCapillary";
+			};
+			name = Release;
+		};
+		89C0CA942925F0D400457467 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S4G3GQXM69;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.capillary.TestCapillaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestCapillary;
+			};
+			name = Debug;
+		};
+		89C0CA952925F0D400457467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S4G3GQXM69;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.capillary.TestCapillaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestCapillary;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -396,6 +819,33 @@
 			buildConfigurations = (
 				89B438772923B4ED00581DA2 /* Debug */,
 				89B438782923B4ED00581DA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89C0CA8D2925F0D400457467 /* Build configuration list for PBXNativeTarget "TestCapillary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89C0CA8E2925F0D400457467 /* Debug */,
+				89C0CA8F2925F0D400457467 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89C0CA902925F0D400457467 /* Build configuration list for PBXNativeTarget "TestCapillaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89C0CA912925F0D400457467 /* Debug */,
+				89C0CA922925F0D400457467 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89C0CA932925F0D400457467 /* Build configuration list for PBXNativeTarget "TestCapillaryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89C0CA942925F0D400457467 /* Debug */,
+				89C0CA952925F0D400457467 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

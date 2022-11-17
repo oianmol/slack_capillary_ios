@@ -12,8 +12,8 @@ class RSAKeyManager {
     public static let KEY_SIZE = 2048
     private var publicKey, privateKey: SecKey?
     
-    private let tagPrivate = "\(Bundle.main.bundleIdentifier).tagPrivate"
-    private let tagPublic  = "\(Bundle.main.bundleIdentifier).tagPublic"
+    private let tagPrivate = "\(String(describing: Bundle.main.bundleIdentifier)).tagPrivate"
+    private let tagPublic  = "\(String(describing: Bundle.main.bundleIdentifier)).tagPublic"
     
     static let shared = RSAKeyManager()
     let exportImportManager = CryptoExportImportManager()
@@ -34,6 +34,7 @@ class RSAKeyManager {
             }
         } catch let error {
             //Log Error
+            print(error)
             return nil
         }
         return nil
