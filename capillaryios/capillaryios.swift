@@ -17,6 +17,10 @@ import SwiftyRSA
         return try! RSAKeyManager.shared.getMyPublicKey()?.data()
     }
     
+    @objc public class func something() -> String {
+        return "anmol"
+    }
+    
     @objc public class func privateKey() -> Data? {
         return try! RSAKeyManager.shared.getMyPrivateKey()?.data()
     }

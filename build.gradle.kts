@@ -19,9 +19,7 @@ sdks.forEach { sdk ->
     workingDir(projectDir)
 
     inputs.files(
-      fileTree("$projectDir/$libraryName.xcworkspace") { exclude("**/xcuserdata") },
       fileTree("$projectDir/$libraryName.xcodeproj") { exclude("**/xcuserdata") },
-      fileTree("$projectDir/$libraryName/Pods"),
       fileTree("$projectDir/$libraryName")
     )
   }
