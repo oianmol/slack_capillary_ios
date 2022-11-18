@@ -9,12 +9,15 @@ import SwiftUI
 import capillaryios
 
 struct ContentView: View {
+    init(){
+        CapillaryIOS.initNow(chainId: "anmol")
+    }
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text(CapillaryIOS.publicKey(chainId: "anmol").debugDescription ?? "")
+            Text(CapillaryIOS.publicKeyString(chainId: "anmol") ?? "")
         }
         .padding()
     }

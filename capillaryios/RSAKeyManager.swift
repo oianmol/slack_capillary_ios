@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftyRSA
+import Security
 
 class RSAKeyManager {
     public static let KEY_SIZE = 2048
@@ -16,11 +16,11 @@ class RSAKeyManager {
     let exportImportManager = CryptoExportImportManager()
     
     private func tagPrivate(chainId:String) ->String {
-        return "\(Bundle.main.bundleIdentifier ?? "").tagPrivate\(chainId)"
+        return "\(Bundle.main.bundleIdentifier ?? "").\(chainId).tagPrivate"
     }
     
     private func tagPublic(chainId:String) ->String {
-        return "\(Bundle.main.bundleIdentifier ?? "").tagPublic\(chainId)"
+        return "\(Bundle.main.bundleIdentifier ?? "").\(chainId).tagPrivate"
     }
     
     
@@ -145,23 +145,28 @@ class RSAKeyManager {
     
     //Generate private and public keys
     public func generateKeyPair(chainId:String) {
-        let privateKeyAttr: [CFString: Any] = [
-            kSecAttrIsPermanent: true,
-            kSecAttrApplicationTag: tagPrivate
-        ]
-        let publicKeyAttr: [CFString: Any] = [
-            kSecAttrIsPermanent: true,
-            kSecAttrApplicationTag: tagPublic
-        ]
-        
-        let parameters: [CFString: Any] = [
-            kSecAttrKeyType: kSecAttrKeyTypeRSA,
-            kSecAttrKeySizeInBits: RSAKeyManager.KEY_SIZE,
-            kSecPrivateKeyAttrs: privateKeyAttr,
-            kSecPublicKeyAttrs: publicKeyAttr
-        ]
-        
-        let status = SecKeyGeneratePair(parameters as CFDictionary, &publicKey, &privateKey)
+        let publicKeyAttr: [NSObject: NSObject] = [
+                    kSecAttrIsPermanent:true as NSObject,
+                    kSecAttrApplicationTag: tagPublic(chainId: chainId)  as NSObject,
+                    kSecClass: kSecClassKey, // added this value
+                    kSecReturnData: kCFBooleanTrue] // added this value
+        let privateKeyAttr: [NSObject: NSObject] = [
+                    kSecAttrIsPermanent:true as NSObject,
+                    kSecAttrApplicationTag: tagPrivate(chainId: chainId) as NSObject,
+                    kSecClass: kSecClassKey, // added this value
+                    kSecReturnData: kCFBooleanTrue] // added this value
+
+        var keyPairAttr = [NSObject: NSObject]()
+        keyPairAttr[kSecAttrKeyType] = kSecAttrKeyTypeRSA
+        keyPairAttr[kSecAttrKeySizeInBits] = 2048 as NSObject
+        keyPairAttr[kSecPublicKeyAttrs] = publicKeyAttr as NSObject
+        keyPairAttr[kSecPrivateKeyAttrs] = privateKeyAttr as NSObject
+
+        var publicKey : SecKey?
+        var privateKey : SecKey?;
+
+        let status = SecKeyGeneratePair(keyPairAttr as CFDictionary, &publicKey, &privateKey)
+
         
         if status != noErr {
             //Log Error

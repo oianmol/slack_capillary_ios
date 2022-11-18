@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		893ABFFD29276D2100DC40F3 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893ABFFC29276D2100DC40F3 /* SwiftyRSA.framework */; };
 		8950D5DD2923C0C50030FE7F /* capillaryios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8950D5DC2923C0C50030FE7F /* capillaryios.swift */; };
 		89A0CCC629267E4B000244CD /* libcapillaryios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B4386F2923B4ED00581DA2 /* libcapillaryios.a */; };
-		89A0CCC92926811C000244CD /* SwiftyRSA in Frameworks */ = {isa = PBXBuildFile; productRef = 89A0CCC82926811C000244CD /* SwiftyRSA */; };
 		89B780A52924A10B00F40435 /* RSAKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B780A42924A10B00F40435 /* RSAKeyManager.swift */; };
 		89B780A72924A14300F40435 /* CryptoExportImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B780A62924A14300F40435 /* CryptoExportImportManager.swift */; };
 		89C0CA6F2925F0D200457467 /* TestCapillaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0CA6E2925F0D200457467 /* TestCapillaryApp.swift */; };
@@ -20,9 +18,20 @@
 		89C0CA802925F0D400457467 /* TestCapillaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0CA7F2925F0D400457467 /* TestCapillaryTests.swift */; };
 		89C0CA8A2925F0D400457467 /* TestCapillaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0CA892925F0D400457467 /* TestCapillaryUITests.swift */; };
 		89C0CA8C2925F0D400457467 /* TestCapillaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0CA8B2925F0D400457467 /* TestCapillaryUITestsLaunchTests.swift */; };
-		89C0CAB02925F4A600457467 /* SwiftyRSA.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89C0CAA22925F3B300457467 /* SwiftyRSA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89C0CAB32925F4B900457467 /* Pods_capillaryios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89C0CAB12925F4B800457467 /* Pods_capillaryios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		89D0E25B2925211400DA679C /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D0E25A2925211400DA679C /* SwiftyRSA.framework */; };
+		89CC47D22927CDCA00B235BC /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47C32927CDCA00B235BC /* Asn1Parser.swift */; };
+		89CC47D32927CDCA00B235BC /* SwiftyRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47C42927CDCA00B235BC /* SwiftyRSA.swift */; };
+		89CC47D42927CDCA00B235BC /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47C52927CDCA00B235BC /* Signature.swift */; };
+		89CC47D52927CDCA00B235BC /* X509Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47C62927CDCA00B235BC /* X509Certificate.swift */; };
+		89CC47D62927CDCA00B235BC /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47C72927CDCA00B235BC /* PrivateKey.swift */; };
+		89CC47D72927CDCA00B235BC /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47C82927CDCA00B235BC /* Key.swift */; };
+		89CC47D82927CDCA00B235BC /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47C92927CDCA00B235BC /* PublicKey.swift */; };
+		89CC47D92927CDCA00B235BC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47CA2927CDCA00B235BC /* Message.swift */; };
+		89CC47DA2927CDCA00B235BC /* RSAKeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47CB2927CDCA00B235BC /* RSAKeyPair.swift */; };
+		89CC47DB2927CDCA00B235BC /* EncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47CE2927CDCA00B235BC /* EncryptedMessage.swift */; };
+		89CC47DC2927CDCA00B235BC /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47CF2927CDCA00B235BC /* SwiftyRSAError.swift */; };
+		89CC47DD2927CDCA00B235BC /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47D02927CDCA00B235BC /* ClearMessage.swift */; };
+		89CC47DE2927CDCA00B235BC /* Data+SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CC47D12927CDCA00B235BC /* Data+SHA.swift */; };
 		BAE841B7DF88AE148646E99D /* Pods_capillaryios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C0CAA92925F48C00457467 /* Pods_capillaryios.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +76,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				89C0CAB32925F4B900457467 /* Pods_capillaryios.framework in Embed Frameworks */,
-				89C0CAB02925F4A600457467 /* SwiftyRSA.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,14 +86,11 @@
 		41F94D8187D1E0717CC2047F /* Pods-capillaryios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capillaryios.release.xcconfig"; path = "Target Support Files/Pods-capillaryios/Pods-capillaryios.release.xcconfig"; sourceTree = "<group>"; };
 		52044CAA64F59DB8E0A8AAA4 /* Pods-capillaryios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capillaryios.debug.xcconfig"; path = "Target Support Files/Pods-capillaryios/Pods-capillaryios.debug.xcconfig"; sourceTree = "<group>"; };
 		7517511F1F3CB079C4052C53 /* Pods_capillaryios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capillaryios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		893ABFFC29276D2100DC40F3 /* SwiftyRSA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyRSA.framework; path = "build/Build/Products/Release-iphonesimulator/PackageFrameworks/SwiftyRSA.framework"; sourceTree = "<group>"; };
 		8950D5DC2923C0C50030FE7F /* capillaryios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = capillaryios.swift; sourceTree = "<group>"; };
 		89B4386F2923B4ED00581DA2 /* libcapillaryios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcapillaryios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B438792923B4FF00581DA2 /* capillaryios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "capillaryios-Bridging-Header.h"; sourceTree = "<group>"; };
 		89B780A42924A10B00F40435 /* RSAKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAKeyManager.swift; sourceTree = "<group>"; };
 		89B780A62924A14300F40435 /* CryptoExportImportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoExportImportManager.swift; sourceTree = "<group>"; };
-		89C0CA202924FA8600457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		89C0CA252924FC7600457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C0CA6C2925F0D200457467 /* TestCapillary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCapillary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C0CA6E2925F0D200457467 /* TestCapillaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCapillaryApp.swift; sourceTree = "<group>"; };
 		89C0CA702925F0D200457467 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,15 +101,23 @@
 		89C0CA852925F0D400457467 /* TestCapillaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCapillaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C0CA892925F0D400457467 /* TestCapillaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCapillaryUITests.swift; sourceTree = "<group>"; };
 		89C0CA8B2925F0D400457467 /* TestCapillaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCapillaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		89C0CA962925F19700457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		89C0CA9A2925F1B900457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		89C0CA9E2925F38800457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		89C0CAA12925F3B300457467 /* SwiftyRSA.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = SwiftyRSA.framework.dSYM; sourceTree = "<group>"; };
-		89C0CAA22925F3B300457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = "<group>"; };
-		89C0CAA52925F48900457467 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C0CAA92925F48C00457467 /* Pods_capillaryios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_capillaryios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C0CAB12925F4B800457467 /* Pods_capillaryios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_capillaryios.framework; path = "build/Build/Products/Release-iphonesimulator/Pods_capillaryios.framework"; sourceTree = "<group>"; };
-		89D0E25A2925211400DA679C /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CC47C32927CDCA00B235BC /* Asn1Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asn1Parser.swift; sourceTree = "<group>"; };
+		89CC47C42927CDCA00B235BC /* SwiftyRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRSA.swift; sourceTree = "<group>"; };
+		89CC47C52927CDCA00B235BC /* Signature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
+		89CC47C62927CDCA00B235BC /* X509Certificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = X509Certificate.swift; sourceTree = "<group>"; };
+		89CC47C72927CDCA00B235BC /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
+		89CC47C82927CDCA00B235BC /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		89CC47C92927CDCA00B235BC /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
+		89CC47CA2927CDCA00B235BC /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		89CC47CB2927CDCA00B235BC /* RSAKeyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAKeyPair.swift; sourceTree = "<group>"; };
+		89CC47CE2927CDCA00B235BC /* EncryptedMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptedMessage.swift; sourceTree = "<group>"; };
+		89CC47CF2927CDCA00B235BC /* SwiftyRSAError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRSAError.swift; sourceTree = "<group>"; };
+		89CC47D02927CDCA00B235BC /* ClearMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearMessage.swift; sourceTree = "<group>"; };
+		89CC47D12927CDCA00B235BC /* Data+SHA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+SHA.swift"; sourceTree = "<group>"; };
+		89CC47DF2927D06000B235BC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		89CC47E12927D1DE00B235BC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89D0E25B2925211400DA679C /* SwiftyRSA.framework in Frameworks */,
 				BAE841B7DF88AE148646E99D /* Pods_capillaryios.framework in Frameworks */,
-				89A0CCC92926811C000244CD /* SwiftyRSA in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +133,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				893ABFFD29276D2100DC40F3 /* SwiftyRSA.framework in Frameworks */,
 				89A0CCC629267E4B000244CD /* libcapillaryios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +181,19 @@
 		89B438712923B4ED00581DA2 /* capillaryios */ = {
 			isa = PBXGroup;
 			children = (
+				89CC47C32927CDCA00B235BC /* Asn1Parser.swift */,
+				89CC47D02927CDCA00B235BC /* ClearMessage.swift */,
+				89CC47D12927CDCA00B235BC /* Data+SHA.swift */,
+				89CC47CE2927CDCA00B235BC /* EncryptedMessage.swift */,
+				89CC47C82927CDCA00B235BC /* Key.swift */,
+				89CC47CA2927CDCA00B235BC /* Message.swift */,
+				89CC47C72927CDCA00B235BC /* PrivateKey.swift */,
+				89CC47C92927CDCA00B235BC /* PublicKey.swift */,
+				89CC47CB2927CDCA00B235BC /* RSAKeyPair.swift */,
+				89CC47C52927CDCA00B235BC /* Signature.swift */,
+				89CC47C42927CDCA00B235BC /* SwiftyRSA.swift */,
+				89CC47CF2927CDCA00B235BC /* SwiftyRSAError.swift */,
+				89CC47C62927CDCA00B235BC /* X509Certificate.swift */,
 				8950D5DC2923C0C50030FE7F /* capillaryios.swift */,
 				89B438792923B4FF00581DA2 /* capillaryios-Bridging-Header.h */,
 				89B780A42924A10B00F40435 /* RSAKeyManager.swift */,
@@ -215,16 +238,6 @@
 			path = TestCapillaryUITests;
 			sourceTree = "<group>";
 		};
-		89C0CAA02925F3B300457467 /* SwiftyRSA */ = {
-			isa = PBXGroup;
-			children = (
-				89C0CAA12925F3B300457467 /* SwiftyRSA.framework.dSYM */,
-				89C0CAA22925F3B300457467 /* SwiftyRSA.framework */,
-			);
-			name = SwiftyRSA;
-			path = "build/Build/Products/Release-iphonesimulator/SwiftyRSA";
-			sourceTree = "<group>";
-		};
 		998EC770793059773FB772CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,22 +250,10 @@
 		DBBDFF30D46093802541E736 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				893ABFFC29276D2100DC40F3 /* SwiftyRSA.framework */,
-				89A0CCC429267D12000244CD /* Validator.framework */,
-				89A0CCC229267CF7000244CD /* Validator.framework */,
-				89A0CCC029267CD7000244CD /* Validator.framework */,
-				89A0CCBE29267CBE000244CD /* Validator.framework */,
-				89A0CCBC29267149000244CD /* Tink.framework */,
+				89CC47DF2927D06000B235BC /* Security.framework */,
+				89CC47E12927D1DE00B235BC /* Security.framework */,
 				89C0CAA92925F48C00457467 /* Pods_capillaryios.framework */,
 				89C0CAB12925F4B800457467 /* Pods_capillaryios.framework */,
-				89C0CAA52925F48900457467 /* SwiftyRSA.framework */,
-				89C0CAA02925F3B300457467 /* SwiftyRSA */,
-				89C0CA9E2925F38800457467 /* SwiftyRSA.framework */,
-				89C0CA9A2925F1B900457467 /* SwiftyRSA.framework */,
-				89C0CA962925F19700457467 /* SwiftyRSA.framework */,
-				89D0E25A2925211400DA679C /* SwiftyRSA.framework */,
-				89C0CA252924FC7600457467 /* SwiftyRSA.framework */,
-				89C0CA202924FA8600457467 /* SwiftyRSA.framework */,
 				7517511F1F3CB079C4052C53 /* Pods_capillaryios.framework */,
 			);
 			name = Frameworks;
@@ -274,11 +275,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				893ABFDF2927649600DC40F3 /* PBXTargetDependency */,
 			);
 			name = capillaryios;
 			packageProductDependencies = (
-				89A0CCC82926811C000244CD /* SwiftyRSA */,
 			);
 			productName = capillaryios;
 			productReference = 89B4386F2923B4ED00581DA2 /* libcapillaryios.a */;
@@ -296,7 +295,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				893ABFFF29276D2B00DC40F3 /* PBXTargetDependency */,
 				89A0CCBB29267016000244CD /* PBXTargetDependency */,
 			);
 			name = TestCapillary;
@@ -377,7 +375,6 @@
 			);
 			mainGroup = 89B438662923B4ED00581DA2;
 			packageReferences = (
-				89A0CCC72926811C000244CD /* XCRemoteSwiftPackageReference "SwiftyRSA" */,
 			);
 			productRefGroup = 89B438702923B4ED00581DA2 /* Products */;
 			projectDirPath = "";
@@ -464,9 +461,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89CC47D82927CDCA00B235BC /* PublicKey.swift in Sources */,
+				89CC47D42927CDCA00B235BC /* Signature.swift in Sources */,
+				89CC47D52927CDCA00B235BC /* X509Certificate.swift in Sources */,
+				89CC47D72927CDCA00B235BC /* Key.swift in Sources */,
 				89B780A72924A14300F40435 /* CryptoExportImportManager.swift in Sources */,
 				89B780A52924A10B00F40435 /* RSAKeyManager.swift in Sources */,
+				89CC47DA2927CDCA00B235BC /* RSAKeyPair.swift in Sources */,
+				89CC47DB2927CDCA00B235BC /* EncryptedMessage.swift in Sources */,
+				89CC47D92927CDCA00B235BC /* Message.swift in Sources */,
+				89CC47DC2927CDCA00B235BC /* SwiftyRSAError.swift in Sources */,
+				89CC47DE2927CDCA00B235BC /* Data+SHA.swift in Sources */,
+				89CC47D32927CDCA00B235BC /* SwiftyRSA.swift in Sources */,
 				8950D5DD2923C0C50030FE7F /* capillaryios.swift in Sources */,
+				89CC47D22927CDCA00B235BC /* Asn1Parser.swift in Sources */,
+				89CC47D62927CDCA00B235BC /* PrivateKey.swift in Sources */,
+				89CC47DD2927CDCA00B235BC /* ClearMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,14 +509,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		893ABFDF2927649600DC40F3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 893ABFDE2927649600DC40F3 /* SwiftyRSA */;
-		};
-		893ABFFF29276D2B00DC40F3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 893ABFFE29276D2B00DC40F3 /* SwiftyRSA */;
-		};
 		89A0CCBB29267016000244CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 89B4386E2923B4ED00581DA2 /* capillaryios */;
@@ -887,35 +889,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		89A0CCC72926811C000244CD /* XCRemoteSwiftPackageReference "SwiftyRSA" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/TakeScoop/SwiftyRSA";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		893ABFDE2927649600DC40F3 /* SwiftyRSA */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 89A0CCC72926811C000244CD /* XCRemoteSwiftPackageReference "SwiftyRSA" */;
-			productName = SwiftyRSA;
-		};
-		893ABFFE29276D2B00DC40F3 /* SwiftyRSA */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 89A0CCC72926811C000244CD /* XCRemoteSwiftPackageReference "SwiftyRSA" */;
-			productName = SwiftyRSA;
-		};
-		89A0CCC82926811C000244CD /* SwiftyRSA */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 89A0CCC72926811C000244CD /* XCRemoteSwiftPackageReference "SwiftyRSA" */;
-			productName = SwiftyRSA;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89B438672923B4ED00581DA2 /* Project object */;
 }

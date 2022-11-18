@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftyRSA
 
 @objc public class CapillaryIOS: NSObject {
     @objc public class func initNow(chainId : String) {
@@ -15,6 +14,10 @@ import SwiftyRSA
     
     @objc public class func publicKey(chainId : String) -> SecKey? {
         return RSAKeyManager.shared.getMyPublicKey(chainId:chainId)?.reference
+    }
+    
+    @objc public class func publicKeyString(chainId : String) -> String? {
+        return RSAKeyManager.shared.getMyPublicKeyString(chainId:chainId)
     }
     
     @objc public class func privateKey(chainId : String) -> SecKey? {
