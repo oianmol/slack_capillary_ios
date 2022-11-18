@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import capillaryios
 @testable import TestCapillary
 
 final class TestCapillaryTests: XCTestCase {
@@ -19,6 +20,7 @@ final class TestCapillaryTests: XCTestCase {
     }
 
     func testExample() throws {
+        XCTAssertNotNil(CapillaryIOS.publicKeyString())
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.

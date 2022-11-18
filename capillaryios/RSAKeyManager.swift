@@ -11,22 +11,54 @@ import SwiftyRSA
 class RSAKeyManager {
     public static let KEY_SIZE = 2048
     private var publicKey, privateKey: SecKey?
-    
-    private let tagPrivate = "\(String(describing: Bundle.main.bundleIdentifier)).tagPrivate"
-    private let tagPublic  = "\(String(describing: Bundle.main.bundleIdentifier)).tagPublic"
-    
+        
     static let shared = RSAKeyManager()
     let exportImportManager = CryptoExportImportManager()
     
-    public func getMyPublicKey() -> PublicKey? {
+    private func tagPrivate(chainId:String) ->String {
+        return "\(Bundle.main.bundleIdentifier ?? "").tagPrivate\(chainId)"
+    }
+    
+    private func tagPublic(chainId:String) ->String {
+        return "\(Bundle.main.bundleIdentifier ?? "").tagPublic\(chainId)"
+    }
+    
+    
+    public func encrypt(data:Data,publicKey:PublicKey) -> Data? {
+        do {
+            let clear = ClearMessage(data: data)
+            let encryptedMessage = try clear.encrypted(with: publicKey, padding: .OAEP)
+            return encryptedMessage.data
+        } catch let error {
+            //Log error
+            debugPrint(error)
+            return nil
+        }
+       
+    }
+    
+    public func decrypt(encryptedMessage:Data,privateKey:PrivateKey) -> Data? {
+        do {
+            let encrypted = EncryptedMessage(data: encryptedMessage)
+            let clear = try encrypted.decrypted(with: privateKey, padding: .OAEP)
+            return clear.data
+        } catch let error {
+            //Log error
+            debugPrint(error)
+            return nil
+        }
+    }
+    
+    
+    public func getMyPublicKey(chainId:String) -> PublicKey? {
         do {
             if let pubKey = publicKey {
                 return try PublicKey(reference: pubKey)
             } else {
-                if getKeysFromKeychain(), let pubKey = publicKey {
+                if getKeysFromKeychain(chainId:chainId), let pubKey = publicKey {
                     return try PublicKey(reference: pubKey)
                 } else {
-                    generateKeyPair()
+                    generateKeyPair(chainId:chainId)
                     if let pubKey = publicKey {
                         return try PublicKey(reference: pubKey)
                     }
@@ -34,21 +66,20 @@ class RSAKeyManager {
             }
         } catch let error {
             //Log Error
-            print(error)
             return nil
         }
         return nil
     }
     
-    public func getMyPrivateKey() -> PrivateKey? {
+    public func getMyPrivateKey(chainId:String) -> PrivateKey? {
         do {
             if let privKey = privateKey {
                 return try PrivateKey(reference: privKey)
             } else {
-                if getKeysFromKeychain(), let privKey = privateKey {
+                if getKeysFromKeychain(chainId:chainId), let privKey = privateKey {
                     return try PrivateKey(reference: privKey)
                 } else {
-                    generateKeyPair()
+                    generateKeyPair(chainId:chainId)
                     if let privKey = privateKey {
                         return try PrivateKey(reference: privKey)
                     }
@@ -65,15 +96,24 @@ class RSAKeyManager {
         do {
             return try PublicKey(pemEncoded: pemEncoded)
         } catch let error {
-            //Log Error
+            debugPrint(error)
+            return nil
+        }
+    }
+    
+    public func getPublicKey(data: Data) -> PublicKey? {
+        do {
+            return try PublicKey(data: data)
+        } catch let error {
+            debugPrint(error)
             return nil
         }
     }
     
     //Check Keychain and get keys
-    private func getKeysFromKeychain() -> Bool {
-        privateKey = getKeyTypeInKeyChain(tag: tagPrivate)
-        publicKey = getKeyTypeInKeyChain(tag: tagPublic)
+    private func getKeysFromKeychain(chainId:String) -> Bool {
+        privateKey = getKeyTypeInKeyChain(tag: tagPrivate(chainId:chainId))
+        publicKey = getKeyTypeInKeyChain(tag: tagPublic(chainId:chainId))
         return ((privateKey != nil)&&(publicKey != nil))
     }
     
@@ -95,7 +135,7 @@ class RSAKeyManager {
     }
     
     //Generate private and public keys
-    private func generateKeyPair() {
+    public func generateKeyPair(chainId:String) {
         let privateKeyAttr: [CFString: Any] = [
             kSecAttrIsPermanent: true,
             kSecAttrApplicationTag: tagPrivate
@@ -119,8 +159,8 @@ class RSAKeyManager {
             return
         }
     }
-    public func getMyPublicKeyString() -> String? {
-        guard let pubKey = self.getMyPublicKey()  else {
+    public func getMyPublicKeyString(chainId:String) -> String? {
+        guard let pubKey = self.getMyPublicKey(chainId:chainId)  else {
             return nil
         }
         return exportImportManager.exportRSAPublicKeyToPEM(try! pubKey.data(), keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
@@ -132,7 +172,7 @@ class RSAKeyManager {
             kSecClass: kSecClassKey
         ]
         let status = SecItemDelete(query as CFDictionary)
-        
+
         switch status {
         case errSecItemNotFound: break
             //No key in keychain

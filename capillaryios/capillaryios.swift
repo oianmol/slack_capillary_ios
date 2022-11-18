@@ -9,24 +9,28 @@ import Foundation
 import SwiftyRSA
 
 @objc public class CapillaryIOS: NSObject {
-    @objc public class func initNow() {
-
+    @objc public class func initNow(chainId : String) {
+        RSAKeyManager.shared.generateKeyPair(chainId:chainId)
     }
     
-    @objc public class func publicKey() -> Data? {
-        return try! RSAKeyManager.shared.getMyPublicKey()?.data()
+    @objc public class func publicKey(chainId : String) -> SecKey? {
+        return try! RSAKeyManager.shared.getMyPublicKey(chainId:chainId)?.reference
     }
     
-    @objc public class func something() -> String {
-        return "anmol"
+    @objc public class func privateKey(chainId : String) -> SecKey? {
+        return try! RSAKeyManager.shared.getMyPrivateKey(chainId:chainId)?.reference
+    }
+        
+    @objc public class func encrypt(data:Data,publicKey:SecKey) -> Data? {
+        return try! RSAKeyManager.shared.encrypt(data: data, publicKey: PublicKey(reference: publicKey))
     }
     
-    @objc public class func privateKey() -> Data? {
-        return try! RSAKeyManager.shared.getMyPrivateKey()?.data()
+    @objc public class func decrypt(data:Data,privateKey:SecKey) -> Data? {
+        return try! RSAKeyManager.shared.decrypt(encryptedMessage: data, privateKey: PrivateKey(reference: privateKey))
     }
     
-    @objc public class func publicKeyString() -> String? {
-        return RSAKeyManager.shared.getMyPublicKeyString()
+    @objc public class func  publicKeyFromBytes(data:Data) -> SecKey?{
+        return try! RSAKeyManager.shared.getPublicKey(data: data)?.reference
     }
 
 }

@@ -14,7 +14,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text(CapillaryIOS.publicKey()?.description ?? "nillll")
+            Text(CapillaryIOS.publicKeyString() ?? "")
         }
         .padding()
     }

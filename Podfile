@@ -6,7 +6,5 @@ target 'capillaryios' do
   use_frameworks!
 
   # Pods for capillaryios
-  pod 'SwiftyRSA'
-
 
 end
