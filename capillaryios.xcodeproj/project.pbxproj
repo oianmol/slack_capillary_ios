@@ -277,6 +277,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				893ABFDF2927649600DC40F3 /* PBXTargetDependency */,
 			);
 			name = capillaryios;
 			packageProductDependencies = (
@@ -500,6 +501,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		893ABFDF2927649600DC40F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 893ABFDE2927649600DC40F3 /* SwiftyRSA */;
+		};
 		89A0CCBB29267016000244CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 89B4386E2923B4ED00581DA2 /* capillaryios */;
@@ -891,6 +896,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		893ABFDE2927649600DC40F3 /* SwiftyRSA */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89A0CCC72926811C000244CD /* XCRemoteSwiftPackageReference "SwiftyRSA" */;
+			productName = SwiftyRSA;
+		};
 		89A0CCC82926811C000244CD /* SwiftyRSA */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 89A0CCC72926811C000244CD /* XCRemoteSwiftPackageReference "SwiftyRSA" */;

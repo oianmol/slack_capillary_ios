@@ -110,6 +110,15 @@ class RSAKeyManager {
         }
     }
     
+    public func getPrivateKey(data: Data) -> PrivateKey? {
+        do {
+            return try PrivateKey(data: data)
+        } catch let error {
+            debugPrint(error)
+            return nil
+        }
+    }
+    
     //Check Keychain and get keys
     private func getKeysFromKeychain(chainId:String) -> Bool {
         privateKey = getKeyTypeInKeyChain(tag: tagPrivate(chainId:chainId))
