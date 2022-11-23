@@ -60,7 +60,7 @@ class RSAKeyManager {
                     try PublicKey(reference: pubKey)
                     return "public key returned getKeysFromKeychain"
                 } else {
-                    generateKeyPair(chainId:chainId)
+                    return generateKeyPair(chainId:chainId)
                     if let pubKey = publicKey {
                         try PublicKey(reference: pubKey)
                         return "public key returned generateKeyPair"
@@ -83,7 +83,7 @@ class RSAKeyManager {
                 if getKeysFromKeychain(chainId:chainId), let pubKey = publicKey {
                     return try PublicKey(reference: pubKey)
                 } else {
-                    generateKeyPair(chainId:chainId)
+                      generateKeyPair(chainId:chainId)
                     if let pubKey = publicKey {
                         return try PublicKey(reference: pubKey)
                     }
@@ -104,7 +104,7 @@ class RSAKeyManager {
                 if getKeysFromKeychain(chainId:chainId), let privKey = privateKey {
                     return try PrivateKey(reference: privKey)
                 } else {
-                    generateKeyPair(chainId:chainId)
+                     generateKeyPair(chainId:chainId)
                     if let privKey = privateKey {
                         return try PrivateKey(reference: privKey)
                     }
@@ -169,7 +169,7 @@ class RSAKeyManager {
     }
     
     //Generate private and public keys
-    public func generateKeyPair(chainId:String) {
+    public func generateKeyPair(chainId:String) -> String {
         let publicKeyAttr: [NSObject: NSObject] = [
                     kSecAttrIsPermanent:true as NSObject,
                     kSecAttrApplicationTag: tagPublic(chainId: chainId)  as NSObject,
@@ -195,8 +195,9 @@ class RSAKeyManager {
         
         if status != noErr {
             //Log Error
-            return
+            return ((SecCopyErrorMessageString(status, nil) ?? "failed to parse") as NSString) as String
         }
+        return "success"
     }
     public func getMyPublicKeyString(chainId:String) -> String? {
         guard let pubKey = self.getMyPublicKey(chainId:chainId)  else {

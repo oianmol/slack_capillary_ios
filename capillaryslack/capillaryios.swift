@@ -16,6 +16,10 @@ import Foundation
         return RSAKeyManager.shared.getMyPublicKey(chainId:chainId)?.reference
     }
     
+    @objc public class func publicKeyLogs(chainId : String) -> String {
+        return RSAKeyManager.shared.getMyPublicKeyLogs(chainId:chainId)
+    }
+    
     @objc public class func publicKeyString(chainId : String) -> String? {
         return RSAKeyManager.shared.getMyPublicKeyString(chainId:chainId)
     }

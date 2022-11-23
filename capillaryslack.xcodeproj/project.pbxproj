@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		89D14049292E26CE000F8C51 /* capillaryslack.docc in Sources */ = {isa = PBXBuildFile; fileRef = 89D14048292E26CE000F8C51 /* capillaryslack.docc */; };
 		89D1404F292E26CE000F8C51 /* capillaryslack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D14044292E26CE000F8C51 /* capillaryslack.framework */; };
 		89D14054292E26CE000F8C51 /* capillaryslackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14053292E26CE000F8C51 /* capillaryslackTests.swift */; };
 		89D14055292E26CE000F8C51 /* capillaryslack.h in Headers */ = {isa = PBXBuildFile; fileRef = 89D14047292E26CE000F8C51 /* capillaryslack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89D14070292E26F4000F8C51 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1405E292E26F4000F8C51 /* Signature.swift */; };
-		89D14071292E26F4000F8C51 /* capillaryslack.docc in Sources */ = {isa = PBXBuildFile; fileRef = 89D1405F292E26F4000F8C51 /* capillaryslack.docc */; };
 		89D14072292E26F4000F8C51 /* RSAKeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14060292E26F4000F8C51 /* RSAKeyPair.swift */; };
 		89D14073292E26F4000F8C51 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14061292E26F4000F8C51 /* PrivateKey.swift */; };
 		89D14074292E26F4000F8C51 /* capillaryios-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 89D14062292E26F4000F8C51 /* capillaryios-Bridging-Header.h */; };
@@ -29,13 +27,6 @@
 		89D1407F292E26F4000F8C51 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406D292E26F4000F8C51 /* Asn1Parser.swift */; };
 		89D14080292E26F4000F8C51 /* capillaryios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406E292E26F4000F8C51 /* capillaryios.swift */; };
 		89D14081292E26F4000F8C51 /* RSAKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406F292E26F4000F8C51 /* RSAKeyManager.swift */; };
-		89D140B7292E2852000F8C51 /* sampleappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D140B6292E2852000F8C51 /* sampleappApp.swift */; };
-		89D140B9292E2852000F8C51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D140B8292E2852000F8C51 /* ContentView.swift */; };
-		89D140BB292E2853000F8C51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D140BA292E2853000F8C51 /* Assets.xcassets */; };
-		89D140BE292E2853000F8C51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D140BD292E2853000F8C51 /* Preview Assets.xcassets */; };
-		89D140C8292E2854000F8C51 /* sampleappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D140C7292E2854000F8C51 /* sampleappTests.swift */; };
-		89D140D2292E2854000F8C51 /* sampleappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D140D1292E2854000F8C51 /* sampleappUITests.swift */; };
-		89D140D4292E2854000F8C51 /* sampleappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D140D3292E2854000F8C51 /* sampleappUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,11 +63,9 @@
 /* Begin PBXFileReference section */
 		89D14044292E26CE000F8C51 /* capillaryslack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = capillaryslack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D14047292E26CE000F8C51 /* capillaryslack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = capillaryslack.h; sourceTree = "<group>"; };
-		89D14048292E26CE000F8C51 /* capillaryslack.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = capillaryslack.docc; sourceTree = "<group>"; };
 		89D1404E292E26CE000F8C51 /* capillaryslackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = capillaryslackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D14053292E26CE000F8C51 /* capillaryslackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = capillaryslackTests.swift; sourceTree = "<group>"; };
 		89D1405E292E26F4000F8C51 /* Signature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
-		89D1405F292E26F4000F8C51 /* capillaryslack.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = capillaryslack.docc; sourceTree = "<group>"; };
 		89D14060292E26F4000F8C51 /* RSAKeyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAKeyPair.swift; sourceTree = "<group>"; };
 		89D14061292E26F4000F8C51 /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
 		89D14062292E26F4000F8C51 /* capillaryios-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "capillaryios-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -94,15 +83,8 @@
 		89D1406E292E26F4000F8C51 /* capillaryios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = capillaryios.swift; sourceTree = "<group>"; };
 		89D1406F292E26F4000F8C51 /* RSAKeyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAKeyManager.swift; sourceTree = "<group>"; };
 		89D140B4292E2852000F8C51 /* sampleapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		89D140B6292E2852000F8C51 /* sampleappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleappApp.swift; sourceTree = "<group>"; };
-		89D140B8292E2852000F8C51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		89D140BA292E2853000F8C51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		89D140BD292E2853000F8C51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89D140C3292E2854000F8C51 /* sampleappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		89D140C7292E2854000F8C51 /* sampleappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleappTests.swift; sourceTree = "<group>"; };
 		89D140CD292E2854000F8C51 /* sampleappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		89D140D1292E2854000F8C51 /* sampleappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleappUITests.swift; sourceTree = "<group>"; };
-		89D140D3292E2854000F8C51 /* sampleappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleappUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,9 +132,6 @@
 			children = (
 				89D14046292E26CE000F8C51 /* capillaryslack */,
 				89D14052292E26CE000F8C51 /* capillaryslackTests */,
-				89D140B5292E2852000F8C51 /* sampleapp */,
-				89D140C6292E2854000F8C51 /* sampleappTests */,
-				89D140D0292E2854000F8C51 /* sampleappUITests */,
 				89D14045292E26CE000F8C51 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,7 +154,6 @@
 				89D1406D292E26F4000F8C51 /* Asn1Parser.swift */,
 				89D14062292E26F4000F8C51 /* capillaryios-Bridging-Header.h */,
 				89D1406E292E26F4000F8C51 /* capillaryios.swift */,
-				89D1405F292E26F4000F8C51 /* capillaryslack.docc */,
 				89D14063292E26F4000F8C51 /* ClearMessage.swift */,
 				89D14068292E26F4000F8C51 /* CryptoExportImportManager.swift */,
 				89D1406A292E26F4000F8C51 /* Data+SHA.swift */,
@@ -191,7 +169,6 @@
 				89D14069292E26F4000F8C51 /* SwiftyRSAError.swift */,
 				89D14066292E26F4000F8C51 /* X509Certificate.swift */,
 				89D14047292E26CE000F8C51 /* capillaryslack.h */,
-				89D14048292E26CE000F8C51 /* capillaryslack.docc */,
 			);
 			path = capillaryslack;
 			sourceTree = "<group>";
@@ -202,42 +179,6 @@
 				89D14053292E26CE000F8C51 /* capillaryslackTests.swift */,
 			);
 			path = capillaryslackTests;
-			sourceTree = "<group>";
-		};
-		89D140B5292E2852000F8C51 /* sampleapp */ = {
-			isa = PBXGroup;
-			children = (
-				89D140B6292E2852000F8C51 /* sampleappApp.swift */,
-				89D140B8292E2852000F8C51 /* ContentView.swift */,
-				89D140BA292E2853000F8C51 /* Assets.xcassets */,
-				89D140BC292E2853000F8C51 /* Preview Content */,
-			);
-			path = sampleapp;
-			sourceTree = "<group>";
-		};
-		89D140BC292E2853000F8C51 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				89D140BD292E2853000F8C51 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		89D140C6292E2854000F8C51 /* sampleappTests */ = {
-			isa = PBXGroup;
-			children = (
-				89D140C7292E2854000F8C51 /* sampleappTests.swift */,
-			);
-			path = sampleappTests;
-			sourceTree = "<group>";
-		};
-		89D140D0292E2854000F8C51 /* sampleappUITests */ = {
-			isa = PBXGroup;
-			children = (
-				89D140D1292E2854000F8C51 /* sampleappUITests.swift */,
-				89D140D3292E2854000F8C51 /* sampleappUITestsLaunchTests.swift */,
-			);
-			path = sampleappUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,8 +356,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89D140BE292E2853000F8C51 /* Preview Assets.xcassets in Resources */,
-				89D140BB292E2853000F8C51 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,14 +384,12 @@
 				89D14076292E26F4000F8C51 /* SwiftyRSA.swift in Sources */,
 				89D14070292E26F4000F8C51 /* Signature.swift in Sources */,
 				89D14078292E26F4000F8C51 /* X509Certificate.swift in Sources */,
-				89D14049292E26CE000F8C51 /* capillaryslack.docc in Sources */,
 				89D14072292E26F4000F8C51 /* RSAKeyPair.swift in Sources */,
 				89D14081292E26F4000F8C51 /* RSAKeyManager.swift in Sources */,
 				89D1407B292E26F4000F8C51 /* SwiftyRSAError.swift in Sources */,
 				89D1407C292E26F4000F8C51 /* Data+SHA.swift in Sources */,
 				89D14077292E26F4000F8C51 /* EncryptedMessage.swift in Sources */,
 				89D1407A292E26F4000F8C51 /* CryptoExportImportManager.swift in Sources */,
-				89D14071292E26F4000F8C51 /* capillaryslack.docc in Sources */,
 				89D1407F292E26F4000F8C51 /* Asn1Parser.swift in Sources */,
 				89D14080292E26F4000F8C51 /* capillaryios.swift in Sources */,
 				89D1407E292E26F4000F8C51 /* Key.swift in Sources */,
@@ -474,8 +411,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89D140B9292E2852000F8C51 /* ContentView.swift in Sources */,
-				89D140B7292E2852000F8C51 /* sampleappApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +418,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89D140C8292E2854000F8C51 /* sampleappTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,8 +425,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89D140D4292E2854000F8C51 /* sampleappUITestsLaunchTests.swift in Sources */,
-				89D140D2292E2854000F8C51 /* sampleappUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,7 +729,6 @@
 		89D140D7292E2854000F8C51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -817,7 +748,6 @@
 		89D140D8292E2854000F8C51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -837,7 +767,6 @@
 		89D140D9292E2854000F8C51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P3R865242N;
@@ -855,7 +784,6 @@
 		89D140DA292E2854000F8C51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P3R865242N;
