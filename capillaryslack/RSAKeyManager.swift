@@ -50,6 +50,31 @@ class RSAKeyManager {
     }
     
     
+    public func getMyPublicKeyLogs(chainId:String) -> String {
+        do {
+            if let pubKey = publicKey {
+                 try PublicKey(reference: pubKey)
+                return "public key returned"
+            } else {
+                if getKeysFromKeychain(chainId:chainId), let pubKey = publicKey {
+                    try PublicKey(reference: pubKey)
+                    return "public key returned getKeysFromKeychain"
+                } else {
+                    generateKeyPair(chainId:chainId)
+                    if let pubKey = publicKey {
+                        try PublicKey(reference: pubKey)
+                        return "public key returned generateKeyPair"
+                    }
+                }
+            }
+        } catch let error {
+            //Log Error
+            return "public key error \(error.localizedDescription)"
+
+        }
+        return "nothing"
+    }
+    
     public func getMyPublicKey(chainId:String) -> PublicKey? {
         do {
             if let pubKey = publicKey {
