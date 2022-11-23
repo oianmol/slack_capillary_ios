@@ -1,0 +1,931 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89D14049292E26CE000F8C51 /* capillaryslack.docc in Sources */ = {isa = PBXBuildFile; fileRef = 89D14048292E26CE000F8C51 /* capillaryslack.docc */; };
+		89D1404F292E26CE000F8C51 /* capillaryslack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D14044292E26CE000F8C51 /* capillaryslack.framework */; };
+		89D14054292E26CE000F8C51 /* capillaryslackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14053292E26CE000F8C51 /* capillaryslackTests.swift */; };
+		89D14055292E26CE000F8C51 /* capillaryslack.h in Headers */ = {isa = PBXBuildFile; fileRef = 89D14047292E26CE000F8C51 /* capillaryslack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89D14070292E26F4000F8C51 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1405E292E26F4000F8C51 /* Signature.swift */; };
+		89D14071292E26F4000F8C51 /* capillaryslack.docc in Sources */ = {isa = PBXBuildFile; fileRef = 89D1405F292E26F4000F8C51 /* capillaryslack.docc */; };
+		89D14072292E26F4000F8C51 /* RSAKeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14060292E26F4000F8C51 /* RSAKeyPair.swift */; };
+		89D14073292E26F4000F8C51 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14061292E26F4000F8C51 /* PrivateKey.swift */; };
+		89D14074292E26F4000F8C51 /* capillaryios-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 89D14062292E26F4000F8C51 /* capillaryios-Bridging-Header.h */; };
+		89D14075292E26F4000F8C51 /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14063292E26F4000F8C51 /* ClearMessage.swift */; };
+		89D14076292E26F4000F8C51 /* SwiftyRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14064292E26F4000F8C51 /* SwiftyRSA.swift */; };
+		89D14077292E26F4000F8C51 /* EncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14065292E26F4000F8C51 /* EncryptedMessage.swift */; };
+		89D14078292E26F4000F8C51 /* X509Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14066292E26F4000F8C51 /* X509Certificate.swift */; };
+		89D14079292E26F4000F8C51 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14067292E26F4000F8C51 /* Message.swift */; };
+		89D1407A292E26F4000F8C51 /* CryptoExportImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14068292E26F4000F8C51 /* CryptoExportImportManager.swift */; };
+		89D1407B292E26F4000F8C51 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14069292E26F4000F8C51 /* SwiftyRSAError.swift */; };
+		89D1407C292E26F4000F8C51 /* Data+SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406A292E26F4000F8C51 /* Data+SHA.swift */; };
+		89D1407D292E26F4000F8C51 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406B292E26F4000F8C51 /* PublicKey.swift */; };
+		89D1407E292E26F4000F8C51 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406C292E26F4000F8C51 /* Key.swift */; };
+		89D1407F292E26F4000F8C51 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406D292E26F4000F8C51 /* Asn1Parser.swift */; };
+		89D14080292E26F4000F8C51 /* capillaryios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406E292E26F4000F8C51 /* capillaryios.swift */; };
+		89D14081292E26F4000F8C51 /* RSAKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406F292E26F4000F8C51 /* RSAKeyManager.swift */; };
+		89D140B7292E2852000F8C51 /* sampleappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D140B6292E2852000F8C51 /* sampleappApp.swift */; };
+		89D140B9292E2852000F8C51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D140B8292E2852000F8C51 /* ContentView.swift */; };
+		89D140BB292E2853000F8C51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D140BA292E2853000F8C51 /* Assets.xcassets */; };
+		89D140BE292E2853000F8C51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D140BD292E2853000F8C51 /* Preview Assets.xcassets */; };
+		89D140C8292E2854000F8C51 /* sampleappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D140C7292E2854000F8C51 /* sampleappTests.swift */; };
+		89D140D2292E2854000F8C51 /* sampleappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D140D1292E2854000F8C51 /* sampleappUITests.swift */; };
+		89D140D4292E2854000F8C51 /* sampleappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D140D3292E2854000F8C51 /* sampleappUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89D14050292E26CE000F8C51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89D1403B292E26CE000F8C51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89D14043292E26CE000F8C51;
+			remoteInfo = capillaryslack;
+		};
+		89D140C4292E2854000F8C51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89D1403B292E26CE000F8C51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89D140B3292E2852000F8C51;
+			remoteInfo = sampleapp;
+		};
+		89D140CE292E2854000F8C51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89D1403B292E26CE000F8C51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89D140B3292E2852000F8C51;
+			remoteInfo = sampleapp;
+		};
+		89D140DE292E288B000F8C51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89D1403B292E26CE000F8C51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89D14043292E26CE000F8C51;
+			remoteInfo = capillaryslack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		89D14044292E26CE000F8C51 /* capillaryslack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = capillaryslack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D14047292E26CE000F8C51 /* capillaryslack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = capillaryslack.h; sourceTree = "<group>"; };
+		89D14048292E26CE000F8C51 /* capillaryslack.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = capillaryslack.docc; sourceTree = "<group>"; };
+		89D1404E292E26CE000F8C51 /* capillaryslackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = capillaryslackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D14053292E26CE000F8C51 /* capillaryslackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = capillaryslackTests.swift; sourceTree = "<group>"; };
+		89D1405E292E26F4000F8C51 /* Signature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
+		89D1405F292E26F4000F8C51 /* capillaryslack.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = capillaryslack.docc; sourceTree = "<group>"; };
+		89D14060292E26F4000F8C51 /* RSAKeyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAKeyPair.swift; sourceTree = "<group>"; };
+		89D14061292E26F4000F8C51 /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
+		89D14062292E26F4000F8C51 /* capillaryios-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "capillaryios-Bridging-Header.h"; sourceTree = "<group>"; };
+		89D14063292E26F4000F8C51 /* ClearMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearMessage.swift; sourceTree = "<group>"; };
+		89D14064292E26F4000F8C51 /* SwiftyRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRSA.swift; sourceTree = "<group>"; };
+		89D14065292E26F4000F8C51 /* EncryptedMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptedMessage.swift; sourceTree = "<group>"; };
+		89D14066292E26F4000F8C51 /* X509Certificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = X509Certificate.swift; sourceTree = "<group>"; };
+		89D14067292E26F4000F8C51 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		89D14068292E26F4000F8C51 /* CryptoExportImportManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoExportImportManager.swift; sourceTree = "<group>"; };
+		89D14069292E26F4000F8C51 /* SwiftyRSAError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRSAError.swift; sourceTree = "<group>"; };
+		89D1406A292E26F4000F8C51 /* Data+SHA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+SHA.swift"; sourceTree = "<group>"; };
+		89D1406B292E26F4000F8C51 /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
+		89D1406C292E26F4000F8C51 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		89D1406D292E26F4000F8C51 /* Asn1Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asn1Parser.swift; sourceTree = "<group>"; };
+		89D1406E292E26F4000F8C51 /* capillaryios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = capillaryios.swift; sourceTree = "<group>"; };
+		89D1406F292E26F4000F8C51 /* RSAKeyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAKeyManager.swift; sourceTree = "<group>"; };
+		89D140B4292E2852000F8C51 /* sampleapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D140B6292E2852000F8C51 /* sampleappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleappApp.swift; sourceTree = "<group>"; };
+		89D140B8292E2852000F8C51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		89D140BA292E2853000F8C51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89D140BD292E2853000F8C51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		89D140C3292E2854000F8C51 /* sampleappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D140C7292E2854000F8C51 /* sampleappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleappTests.swift; sourceTree = "<group>"; };
+		89D140CD292E2854000F8C51 /* sampleappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D140D1292E2854000F8C51 /* sampleappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleappUITests.swift; sourceTree = "<group>"; };
+		89D140D3292E2854000F8C51 /* sampleappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89D14041292E26CE000F8C51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D1404B292E26CE000F8C51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D1404F292E26CE000F8C51 /* capillaryslack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D140B1292E2852000F8C51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D140C0292E2854000F8C51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D140CA292E2854000F8C51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89D1403A292E26CE000F8C51 = {
+			isa = PBXGroup;
+			children = (
+				89D14046292E26CE000F8C51 /* capillaryslack */,
+				89D14052292E26CE000F8C51 /* capillaryslackTests */,
+				89D140B5292E2852000F8C51 /* sampleapp */,
+				89D140C6292E2854000F8C51 /* sampleappTests */,
+				89D140D0292E2854000F8C51 /* sampleappUITests */,
+				89D14045292E26CE000F8C51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89D14045292E26CE000F8C51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89D14044292E26CE000F8C51 /* capillaryslack.framework */,
+				89D1404E292E26CE000F8C51 /* capillaryslackTests.xctest */,
+				89D140B4292E2852000F8C51 /* sampleapp.app */,
+				89D140C3292E2854000F8C51 /* sampleappTests.xctest */,
+				89D140CD292E2854000F8C51 /* sampleappUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89D14046292E26CE000F8C51 /* capillaryslack */ = {
+			isa = PBXGroup;
+			children = (
+				89D1406D292E26F4000F8C51 /* Asn1Parser.swift */,
+				89D14062292E26F4000F8C51 /* capillaryios-Bridging-Header.h */,
+				89D1406E292E26F4000F8C51 /* capillaryios.swift */,
+				89D1405F292E26F4000F8C51 /* capillaryslack.docc */,
+				89D14063292E26F4000F8C51 /* ClearMessage.swift */,
+				89D14068292E26F4000F8C51 /* CryptoExportImportManager.swift */,
+				89D1406A292E26F4000F8C51 /* Data+SHA.swift */,
+				89D14065292E26F4000F8C51 /* EncryptedMessage.swift */,
+				89D1406C292E26F4000F8C51 /* Key.swift */,
+				89D14067292E26F4000F8C51 /* Message.swift */,
+				89D14061292E26F4000F8C51 /* PrivateKey.swift */,
+				89D1406B292E26F4000F8C51 /* PublicKey.swift */,
+				89D1406F292E26F4000F8C51 /* RSAKeyManager.swift */,
+				89D14060292E26F4000F8C51 /* RSAKeyPair.swift */,
+				89D1405E292E26F4000F8C51 /* Signature.swift */,
+				89D14064292E26F4000F8C51 /* SwiftyRSA.swift */,
+				89D14069292E26F4000F8C51 /* SwiftyRSAError.swift */,
+				89D14066292E26F4000F8C51 /* X509Certificate.swift */,
+				89D14047292E26CE000F8C51 /* capillaryslack.h */,
+				89D14048292E26CE000F8C51 /* capillaryslack.docc */,
+			);
+			path = capillaryslack;
+			sourceTree = "<group>";
+		};
+		89D14052292E26CE000F8C51 /* capillaryslackTests */ = {
+			isa = PBXGroup;
+			children = (
+				89D14053292E26CE000F8C51 /* capillaryslackTests.swift */,
+			);
+			path = capillaryslackTests;
+			sourceTree = "<group>";
+		};
+		89D140B5292E2852000F8C51 /* sampleapp */ = {
+			isa = PBXGroup;
+			children = (
+				89D140B6292E2852000F8C51 /* sampleappApp.swift */,
+				89D140B8292E2852000F8C51 /* ContentView.swift */,
+				89D140BA292E2853000F8C51 /* Assets.xcassets */,
+				89D140BC292E2853000F8C51 /* Preview Content */,
+			);
+			path = sampleapp;
+			sourceTree = "<group>";
+		};
+		89D140BC292E2853000F8C51 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				89D140BD292E2853000F8C51 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		89D140C6292E2854000F8C51 /* sampleappTests */ = {
+			isa = PBXGroup;
+			children = (
+				89D140C7292E2854000F8C51 /* sampleappTests.swift */,
+			);
+			path = sampleappTests;
+			sourceTree = "<group>";
+		};
+		89D140D0292E2854000F8C51 /* sampleappUITests */ = {
+			isa = PBXGroup;
+			children = (
+				89D140D1292E2854000F8C51 /* sampleappUITests.swift */,
+				89D140D3292E2854000F8C51 /* sampleappUITestsLaunchTests.swift */,
+			);
+			path = sampleappUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		89D1403F292E26CE000F8C51 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D14055292E26CE000F8C51 /* capillaryslack.h in Headers */,
+				89D14074292E26F4000F8C51 /* capillaryios-Bridging-Header.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		89D14043292E26CE000F8C51 /* capillaryslack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89D14058292E26CE000F8C51 /* Build configuration list for PBXNativeTarget "capillaryslack" */;
+			buildPhases = (
+				89D1403F292E26CE000F8C51 /* Headers */,
+				89D14040292E26CE000F8C51 /* Sources */,
+				89D14041292E26CE000F8C51 /* Frameworks */,
+				89D14042292E26CE000F8C51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = capillaryslack;
+			productName = capillaryslack;
+			productReference = 89D14044292E26CE000F8C51 /* capillaryslack.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		89D1404D292E26CE000F8C51 /* capillaryslackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89D1405B292E26CE000F8C51 /* Build configuration list for PBXNativeTarget "capillaryslackTests" */;
+			buildPhases = (
+				89D1404A292E26CE000F8C51 /* Sources */,
+				89D1404B292E26CE000F8C51 /* Frameworks */,
+				89D1404C292E26CE000F8C51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89D14051292E26CE000F8C51 /* PBXTargetDependency */,
+			);
+			name = capillaryslackTests;
+			productName = capillaryslackTests;
+			productReference = 89D1404E292E26CE000F8C51 /* capillaryslackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		89D140B3292E2852000F8C51 /* sampleapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89D140DB292E2854000F8C51 /* Build configuration list for PBXNativeTarget "sampleapp" */;
+			buildPhases = (
+				89D140B0292E2852000F8C51 /* Sources */,
+				89D140B1292E2852000F8C51 /* Frameworks */,
+				89D140B2292E2852000F8C51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89D140DF292E288B000F8C51 /* PBXTargetDependency */,
+			);
+			name = sampleapp;
+			productName = sampleapp;
+			productReference = 89D140B4292E2852000F8C51 /* sampleapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89D140C2292E2854000F8C51 /* sampleappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89D140DC292E2854000F8C51 /* Build configuration list for PBXNativeTarget "sampleappTests" */;
+			buildPhases = (
+				89D140BF292E2854000F8C51 /* Sources */,
+				89D140C0292E2854000F8C51 /* Frameworks */,
+				89D140C1292E2854000F8C51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89D140C5292E2854000F8C51 /* PBXTargetDependency */,
+			);
+			name = sampleappTests;
+			productName = sampleappTests;
+			productReference = 89D140C3292E2854000F8C51 /* sampleappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		89D140CC292E2854000F8C51 /* sampleappUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89D140DD292E2854000F8C51 /* Build configuration list for PBXNativeTarget "sampleappUITests" */;
+			buildPhases = (
+				89D140C9292E2854000F8C51 /* Sources */,
+				89D140CA292E2854000F8C51 /* Frameworks */,
+				89D140CB292E2854000F8C51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89D140CF292E2854000F8C51 /* PBXTargetDependency */,
+			);
+			name = sampleappUITests;
+			productName = sampleappUITests;
+			productReference = 89D140CD292E2854000F8C51 /* sampleappUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89D1403B292E26CE000F8C51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					89D14043292E26CE000F8C51 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					89D1404D292E26CE000F8C51 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					89D140B3292E2852000F8C51 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					89D140C2292E2854000F8C51 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 89D140B3292E2852000F8C51;
+					};
+					89D140CC292E2854000F8C51 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 89D140B3292E2852000F8C51;
+					};
+				};
+			};
+			buildConfigurationList = 89D1403E292E26CE000F8C51 /* Build configuration list for PBXProject "capillaryslack" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89D1403A292E26CE000F8C51;
+			productRefGroup = 89D14045292E26CE000F8C51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89D14043292E26CE000F8C51 /* capillaryslack */,
+				89D1404D292E26CE000F8C51 /* capillaryslackTests */,
+				89D140B3292E2852000F8C51 /* sampleapp */,
+				89D140C2292E2854000F8C51 /* sampleappTests */,
+				89D140CC292E2854000F8C51 /* sampleappUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89D14042292E26CE000F8C51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D1404C292E26CE000F8C51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D140B2292E2852000F8C51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D140BE292E2853000F8C51 /* Preview Assets.xcassets in Resources */,
+				89D140BB292E2853000F8C51 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D140C1292E2854000F8C51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D140CB292E2854000F8C51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89D14040292E26CE000F8C51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D1407D292E26F4000F8C51 /* PublicKey.swift in Sources */,
+				89D14076292E26F4000F8C51 /* SwiftyRSA.swift in Sources */,
+				89D14070292E26F4000F8C51 /* Signature.swift in Sources */,
+				89D14078292E26F4000F8C51 /* X509Certificate.swift in Sources */,
+				89D14049292E26CE000F8C51 /* capillaryslack.docc in Sources */,
+				89D14072292E26F4000F8C51 /* RSAKeyPair.swift in Sources */,
+				89D14081292E26F4000F8C51 /* RSAKeyManager.swift in Sources */,
+				89D1407B292E26F4000F8C51 /* SwiftyRSAError.swift in Sources */,
+				89D1407C292E26F4000F8C51 /* Data+SHA.swift in Sources */,
+				89D14077292E26F4000F8C51 /* EncryptedMessage.swift in Sources */,
+				89D1407A292E26F4000F8C51 /* CryptoExportImportManager.swift in Sources */,
+				89D14071292E26F4000F8C51 /* capillaryslack.docc in Sources */,
+				89D1407F292E26F4000F8C51 /* Asn1Parser.swift in Sources */,
+				89D14080292E26F4000F8C51 /* capillaryios.swift in Sources */,
+				89D1407E292E26F4000F8C51 /* Key.swift in Sources */,
+				89D14079292E26F4000F8C51 /* Message.swift in Sources */,
+				89D14073292E26F4000F8C51 /* PrivateKey.swift in Sources */,
+				89D14075292E26F4000F8C51 /* ClearMessage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D1404A292E26CE000F8C51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D14054292E26CE000F8C51 /* capillaryslackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D140B0292E2852000F8C51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D140B9292E2852000F8C51 /* ContentView.swift in Sources */,
+				89D140B7292E2852000F8C51 /* sampleappApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D140BF292E2854000F8C51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D140C8292E2854000F8C51 /* sampleappTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D140C9292E2854000F8C51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D140D4292E2854000F8C51 /* sampleappUITestsLaunchTests.swift in Sources */,
+				89D140D2292E2854000F8C51 /* sampleappUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89D14051292E26CE000F8C51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89D14043292E26CE000F8C51 /* capillaryslack */;
+			targetProxy = 89D14050292E26CE000F8C51 /* PBXContainerItemProxy */;
+		};
+		89D140C5292E2854000F8C51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89D140B3292E2852000F8C51 /* sampleapp */;
+			targetProxy = 89D140C4292E2854000F8C51 /* PBXContainerItemProxy */;
+		};
+		89D140CF292E2854000F8C51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89D140B3292E2852000F8C51 /* sampleapp */;
+			targetProxy = 89D140CE292E2854000F8C51 /* PBXContainerItemProxy */;
+		};
+		89D140DF292E288B000F8C51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89D14043292E26CE000F8C51 /* capillaryslack */;
+			targetProxy = 89D140DE292E288B000F8C51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		89D14056292E26CE000F8C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		89D14057292E26CE000F8C51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		89D14059292E26CE000F8C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P3R865242N;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.capillaryslack;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89D1405A292E26CE000F8C51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P3R865242N;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.capillaryslack;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		89D1405C292E26CE000F8C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3R865242N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.capillaryslackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89D1405D292E26CE000F8C51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3R865242N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.capillaryslackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		89D140D5292E2854000F8C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"sampleapp/Preview Content\"";
+				DEVELOPMENT_TEAM = P3R865242N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.sampleapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89D140D6292E2854000F8C51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"sampleapp/Preview Content\"";
+				DEVELOPMENT_TEAM = P3R865242N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.sampleapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		89D140D7292E2854000F8C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3R865242N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.sampleappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sampleapp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sampleapp";
+			};
+			name = Debug;
+		};
+		89D140D8292E2854000F8C51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3R865242N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.sampleappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sampleapp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sampleapp";
+			};
+			name = Release;
+		};
+		89D140D9292E2854000F8C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3R865242N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.sampleappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = sampleapp;
+			};
+			name = Debug;
+		};
+		89D140DA292E2854000F8C51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3R865242N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.baseio.sampleappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = sampleapp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89D1403E292E26CE000F8C51 /* Build configuration list for PBXProject "capillaryslack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D14056292E26CE000F8C51 /* Debug */,
+				89D14057292E26CE000F8C51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89D14058292E26CE000F8C51 /* Build configuration list for PBXNativeTarget "capillaryslack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D14059292E26CE000F8C51 /* Debug */,
+				89D1405A292E26CE000F8C51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89D1405B292E26CE000F8C51 /* Build configuration list for PBXNativeTarget "capillaryslackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D1405C292E26CE000F8C51 /* Debug */,
+				89D1405D292E26CE000F8C51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89D140DB292E2854000F8C51 /* Build configuration list for PBXNativeTarget "sampleapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D140D5292E2854000F8C51 /* Debug */,
+				89D140D6292E2854000F8C51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89D140DC292E2854000F8C51 /* Build configuration list for PBXNativeTarget "sampleappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D140D7292E2854000F8C51 /* Debug */,
+				89D140D8292E2854000F8C51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89D140DD292E2854000F8C51 /* Build configuration list for PBXNativeTarget "sampleappUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D140D9292E2854000F8C51 /* Debug */,
+				89D140DA292E2854000F8C51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89D1403B292E26CE000F8C51 /* Project object */;
+}

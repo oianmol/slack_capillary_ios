@@ -1,13 +1,13 @@
 //
-//  TestCapillaryUITestsLaunchTests.swift
-//  TestCapillaryUITests
+//  sampleappUITestsLaunchTests.swift
+//  sampleappUITests
 //
-//  Created by Anmol Verma on 17/11/22.
+//  Created by Anmol Verma on 23/11/22.
 //
 
 import XCTest
 
-final class TestCapillaryUITestsLaunchTests: XCTestCase {
+final class sampleappUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

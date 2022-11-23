@@ -1,15 +1,14 @@
 //
-//  TestCapillaryTests.swift
-//  TestCapillaryTests
+//  capillaryslackTests.swift
+//  capillaryslackTests
 //
-//  Created by Anmol Verma on 17/11/22.
+//  Created by Anmol Verma on 23/11/22.
 //
 
 import XCTest
-import capillaryios
-@testable import TestCapillary
+@testable import capillaryslack
 
-final class TestCapillaryTests: XCTestCase {
+final class capillaryslackTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -20,7 +19,6 @@ final class TestCapillaryTests: XCTestCase {
     }
 
     func testExample() throws {
-        XCTAssertNotNil(CapillaryIOS.publicKeyString())
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.

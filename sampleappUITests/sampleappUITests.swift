@@ -1,13 +1,13 @@
 //
-//  TestCapillaryUITests.swift
-//  TestCapillaryUITests
+//  sampleappUITests.swift
+//  sampleappUITests
 //
-//  Created by Anmol Verma on 17/11/22.
+//  Created by Anmol Verma on 23/11/22.
 //
 
 import XCTest
 
-final class TestCapillaryUITests: XCTestCase {
+final class sampleappUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

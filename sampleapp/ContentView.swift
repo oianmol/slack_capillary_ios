@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import capillaryios
+import capillaryslack
 
 struct ContentView: View {
     init(){
