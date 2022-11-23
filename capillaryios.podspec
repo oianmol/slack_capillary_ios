@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license = "MIT"
   s.author = { "Anmol Verma" => "anmol.verma4@gmail.com" }
 
-  s.source = { :git => "https://github.com/oianmol/slack_capillary_ios.git", :tag => s.version }
+  s.source = { :git => "https://github.com/oianmol/slack_capillary_ios.git", :branch => "master" }
   s.source_files = "capillaryslack/*.{swift,m,h}"
   s.framework = "Security"
   s.requires_arc = true
