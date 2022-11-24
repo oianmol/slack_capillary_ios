@@ -19,12 +19,14 @@ final class capillaryslackTests: XCTestCase {
     }
 
     func testExample() throws {
-        CapillaryIOS.initNow(chainId: "anmol", isTest: true)
+        CapillaryIOS.setIsTest(isTest: true)
+        CapillaryIOS.initNow(chainId: "anmol")
         let publicKey = CapillaryIOS.publicKey(chainId: "anmol")
         
         let encrypted = CapillaryIOS.encrypt(data: "anmol".data(using: .utf8)!, publicKey: publicKey!)!
         XCTAssertNotNil(encrypted)
-        let decrypted = CapillaryIOS.decrypt(data: encrypted, privateKey: CapillaryIOS.privateKey(chainId: "anmol")!)
+        let privateKey = CapillaryIOS.privateKey(chainId: "anmol")!
+        let decrypted = CapillaryIOS.decrypt(data: encrypted, privateKey: privateKey)
         let str = String(decoding: decrypted!, as: UTF8.self)
         XCTAssertEqual(str, "anmol")
 

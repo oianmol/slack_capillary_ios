@@ -21,16 +21,16 @@ import Foundation
         return RSAKeyManager.shared.getMyPublicKeyData(chainId:chainId)
     }
     
-    @objc public class func privateKey(chainId : String) -> SecKey? {
-        return RSAKeyManager.shared.getMyPrivateKey(chainId:chainId)?.reference
+    @objc public class func privateKey(chainId : String) -> Data? {
+        return RSAKeyManager.shared.getMyPrivateKeyData(chainId:chainId)
     }
         
     @objc public class func encrypt(data:Data,publicKey:Data) -> Data? {
         return RSAKeyManager.shared.encrypt(data: data, publicKey: publicKey)
     }
     
-    @objc public class func decrypt(data:Data,privateKey:SecKey) -> Data? {
-        return try! RSAKeyManager.shared.decrypt(encryptedMessage: data, privateKey: PrivateKey(reference: privateKey))
+    @objc public class func decrypt(data:Data,privateKey:Data) -> Data? {
+        return try! RSAKeyManager.shared.decrypt(encryptedMessage: data, privateKey: privateKey)
     }
     
     @objc public class func  publicKeyFromBytes(data:Data) -> Data? {

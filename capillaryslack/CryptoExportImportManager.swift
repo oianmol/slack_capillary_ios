@@ -149,6 +149,35 @@ class CryptoExportImportManager: NSObject {
         derKey.append(rawPublicKeyBytes) // public key raw data.
         return derKey
     }
+    
+    func exportRSAPrivateKeyToDER(_ rawPublicKeyBytes: Data, keyType: String, keySize: Int) -> Data {
+        // first we create the space for the ASN.1 header and decide about its length
+        let bitstringEncodingLength = bytesNeededForRepresentingInteger(rawPublicKeyBytes.count)
+        
+        // start building the ASN.1 header
+        var headerBuffer = [UInt8](repeating: 0, count: kCryptoExportImportManagerASNHeaderLengthForRSA);
+        headerBuffer[0] = kCryptoExportImportManagerASNHeaderSequenceMark;
+        
+        // total size (OID + encoding + key size) + 2 (marks)
+        let totalSize = kCryptoExportImportManagerRSAOIDHeaderLength + bitstringEncodingLength + rawPublicKeyBytes.count + 3
+        let totalSizebitstringEncodingLength = encodeASN1LengthParameter(totalSize, buffer: &(headerBuffer[1]))
+        
+        // bitstring header
+        var keyLengthBytesEncoded = 0
+        var bitstringBuffer = [UInt8](repeating: 0, count: kCryptoExportImportManagerASNHeaderLengthForRSA);
+        bitstringBuffer[0] = kCryptoExportImportManagerASNHeaderBitstringMark
+        keyLengthBytesEncoded = encodeASN1LengthParameter(rawPublicKeyBytes.count+1, buffer: &(bitstringBuffer[1]))
+        bitstringBuffer[keyLengthBytesEncoded + 1] = 0x00
+        
+        // build DER key.
+        var derKey = Data(capacity: totalSize + totalSizebitstringEncodingLength)
+        derKey.append(headerBuffer, count: totalSizebitstringEncodingLength + 1)
+        derKey.append(kCryptoExportImportManagerRSAOIDHeader, count: kCryptoExportImportManagerRSAOIDHeaderLength) // Add OID header
+        derKey.append(bitstringBuffer, count: keyLengthBytesEncoded + 2) // 0x03 + key bitstring length + 0x00
+        derKey.append(rawPublicKeyBytes) // public key raw data.
+        return derKey
+    }
+    
 
     /**
      * This function prepares a RSA public key generated with Apple SecKeyGeneratePair to be exported

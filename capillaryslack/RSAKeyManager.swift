@@ -43,10 +43,10 @@ class RSAKeyManager {
        
     }
     
-    public func decrypt(encryptedMessage:Data,privateKey:PrivateKey) -> Data? {
+    public func decrypt(encryptedMessage:Data,privateKey:Data) -> Data? {
         do {
             let encrypted = EncryptedMessage(data: encryptedMessage)
-            let clear = try encrypted.decrypted(with: privateKey, padding: .OAEP)
+            let clear = try encrypted.decrypted(with: PrivateKey(data:privateKey), padding: .OAEP)
             return clear.data
         } catch let error {
             //Log error
@@ -178,6 +178,13 @@ class RSAKeyManager {
             return nil
         }
         return exportImportManager.exportRSAPublicKeyToDER(try! pubKey.data(), keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
+    }
+    
+    public func getMyPrivateKeyData(chainId:String) -> Data? {
+        guard let privateKey = self.getMyPrivateKey(chainId:chainId)  else {
+            return nil
+        }
+        return exportImportManager.exportRSAPrivateKeyToDER(try! privateKey.data(), keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
     }
     
     //Delete keys when required.
