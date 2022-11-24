@@ -18,18 +18,29 @@ final class capillaryslackTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testEncryptAndDecryptWithRSA() throws {
         CapillaryIOS.setIsTest(isTest: true)
         CapillaryIOS.initNow(chainId: "anmol")
-        let publicKey = CapillaryIOS.publicKey(chainId: "anmol")
         
+        let publicKey = CapillaryIOS.publicKey(chainId: "anmol")
+        let privateKey = CapillaryIOS.privateKey(chainId: "anmol")!
+
         let encrypted = CapillaryIOS.encrypt(data: "anmol".data(using: .utf8)!, publicKey: publicKey!)!
         XCTAssertNotNil(encrypted)
-        let privateKey = CapillaryIOS.privateKey(chainId: "anmol")!
+        
         let decrypted = CapillaryIOS.decrypt(data: encrypted, privateKey: privateKey)
+        XCTAssertNotNil(decrypted)
+        
         let str = String(decoding: decrypted!, as: UTF8.self)
         XCTAssertEqual(str, "anmol")
-
+        
+        
+        let publicKeyFromBytes = CapillaryIOS.publicKeyFromBytes(data: publicKey!)
+        let privateKeyFromBytes = CapillaryIOS.privateKeyFromBytes(data: privateKey)
+        
+        let encryptedNext = CapillaryIOS.encrypt(data: "anmolverma".data(using: .utf8)!, publicKey: publicKeyFromBytes!)
+        let decryptedNext = CapillaryIOS.decrypt(data: encryptedNext!, privateKey: privateKeyFromBytes!)
+        XCTAssertEqual(String(decoding: decryptedNext!, as: UTF8.self), "anmolverma")
     }
 
     func testPerformanceExample() throws {
