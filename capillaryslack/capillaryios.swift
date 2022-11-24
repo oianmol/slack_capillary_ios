@@ -8,8 +8,7 @@
 import Foundation
 
 @objc public class CapillaryIOS: NSObject {
-    @objc public class func initNow(chainId : String, isTest:Bool) {
-        RSAKeyManager.shared.setIsTest(isTest: isTest)
+    @objc public class func initNow(chainId : String) {
         RSAKeyManager.shared.generateKeyPair(chainId: chainId)
     }
     
