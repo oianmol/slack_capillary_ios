@@ -10,6 +10,7 @@ import Security
 
 class RSAKeyManager {
     public static let KEY_SIZE = 2048
+    var isTest: Bool = false
     private var publicKey, privateKey: SecKey?
         
     static let shared = RSAKeyManager()
@@ -24,10 +25,11 @@ class RSAKeyManager {
     }
     
     
-    public func encrypt(data:Data,publicKey:PublicKey) -> Data? {
+    public func encrypt(data:Data,publicKey:Data) -> Data? {
         do {
+           let publicKeyRef = exportImportManager.exportRSAPublicKeyToDER(publicKey, keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
             let clear = ClearMessage(data: data)
-            let encryptedMessage = try clear.encrypted(with: publicKey, padding: .OAEP)
+            let encryptedMessage = try clear.encrypted(with: PublicKey(data: publicKeyRef), padding: .OAEP)
             return encryptedMessage.data
         } catch let error {
             //Log error
@@ -103,6 +105,16 @@ class RSAKeyManager {
     public func getPublicKey(data: Data) -> PublicKey? {
         do {
             let publicKey = try PublicKey(data: data)
+            return publicKey
+        } catch let error {
+            debugPrint(error)
+            return nil
+        }
+    }
+    
+    public func getPublicKey(secRef: SecKey) -> PublicKey? {
+        do {
+            let publicKey = try PublicKey(reference: secRef)
             let publicKeyData = try publicKey.data()
             let publicKey_with_X509_header = try SwiftyRSA.prependX509KeyHeader(keyData: publicKeyData)
             return try PublicKey(data: publicKey_with_X509_header)
@@ -150,18 +162,18 @@ class RSAKeyManager {
     //Generate private and public keys
     public func generateKeyPair(chainId:String) {
         do{
-            let keyPair = try SwiftyRSA.generateRSAKeyPair(sizeInBits: RSAKeyManager.KEY_SIZE,tagData: chainId)
+            let keyPair = try SwiftyRSA.generateRSAKeyPair(sizeInBits: RSAKeyManager.KEY_SIZE,applyUnitTestWorkaround: isTest,tagData: chainId)
             publicKey =  try  SwiftyRSA.addKey(keyPair.publicKey.data(), isPublic: true, tag: chainId)
             privateKey =  try SwiftyRSA.addKey(keyPair.privateKey.data(), isPublic: false, tag: chainId)
         } catch let error {
             debugPrint(error)
         }
     }
-    public func getMyPublicKeyString(chainId:String) -> String? {
+    public func getMyPublicKeyData(chainId:String) -> Data? {
         guard let pubKey = self.getMyPublicKey(chainId:chainId)  else {
             return nil
         }
-        return exportImportManager.exportRSAPublicKeyToPEM(try! pubKey.data(), keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
+        return exportImportManager.exportRSAPublicKeyToDER(try! pubKey.data(), keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
     }
     
     //Delete keys when required.
