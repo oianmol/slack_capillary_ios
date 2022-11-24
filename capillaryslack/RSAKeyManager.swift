@@ -16,6 +16,10 @@ class RSAKeyManager {
     static let shared = RSAKeyManager()
     let exportImportManager = CryptoExportImportManager()
     
+    func setIsTest(isTest:Bool){
+        self.isTest = isTest
+    }
+    
     private func tagPrivate(chainId:String) ->String {
         return "\(Bundle.main.bundleIdentifier ?? "").\(chainId).tagPrivate"
     }
