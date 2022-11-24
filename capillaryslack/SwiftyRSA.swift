@@ -316,20 +316,6 @@ public enum SwiftyRSA {
         }
     }
     
-    internal func getPublicKeyData() -> Data? {
-        guard let lpublicKey = publicKey else {
-            return nil
-        }
-        do {
-            let data = try lpublicKey.data()
-            let pkcs8Key = addPKCS8Header(data)
-            return pkcs8Key
-        } catch {
-            print(error.localizedDescription)
-        }
-        return nil
-    }
-    
     static func addPKCS8Header(_ derKey: Data) -> Data {
         var result = Data()
 
