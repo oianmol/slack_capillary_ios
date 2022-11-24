@@ -30,23 +30,15 @@ import Foundation
     }
     
     @objc public class func decrypt(data:Data,privateKey:Data) -> Data? {
-        return try! RSAKeyManager.shared.decrypt(encryptedMessage: data, privateKey: privateKey)
+        return RSAKeyManager.shared.decrypt(encryptedMessage: data, privateKey: privateKey)
     }
     
-    @objc public class func  publicKeyFromBytes(data:Data) -> Data? {
+    @objc public class func publicKeyFromBytes(data:Data) -> Data? {
         return try! RSAKeyManager.shared.getPublicKey(data: data)?.data()
     }
     
-    @objc public class func  privateKeyFromBytes(data:Data) -> SecKey? {
-        return RSAKeyManager.shared.getPrivateKey(data: data)?.reference
-    }
-        
-    @objc public class func bytesFromSecKey(secKey:SecKey) -> Data? {
-        return try! RSAKeyManager.shared.getPublicKey(secRef:secKey)?.data()
-    }
-    
-    @objc public class func bytesFromPrivateKey(secKey:SecKey) -> Data {
-        return try! PrivateKey(reference: secKey).data()
+    @objc public class func privateKeyFromBytes(data:Data) -> Data? {
+        return try! RSAKeyManager.shared.getPrivateKey(data: data)?.data()
     }
 
 }

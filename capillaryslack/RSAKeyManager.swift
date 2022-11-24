@@ -108,7 +108,8 @@ class RSAKeyManager {
     
     public func getPublicKey(data: Data) -> PublicKey? {
         do {
-            let publicKey = try PublicKey(data: data)
+            let publicKey_with_X509_header = try SwiftyRSA.prependX509KeyHeader(keyData: data)
+            let publicKey = try PublicKey(data: publicKey_with_X509_header)
             return publicKey
         } catch let error {
             debugPrint(error)
@@ -130,7 +131,9 @@ class RSAKeyManager {
     
     public func getPrivateKey(data: Data) -> PrivateKey? {
         do {
-            return try PrivateKey(data: data)
+            let publicKey_with_X509_header = SwiftyRSA.addPKCS8Header(data)
+            let privateKey =  try PrivateKey(data: publicKey_with_X509_header)
+            return privateKey
         } catch let error {
             debugPrint(error)
             return nil
