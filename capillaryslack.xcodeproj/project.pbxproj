@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		893F8C7E2930925C0020DEDE /* RSA.h in Headers */ = {isa = PBXBuildFile; fileRef = 893F8C7B2930925C0020DEDE /* RSA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		893F8C802930925C0020DEDE /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 893F8C7D2930925C0020DEDE /* RSA.m */; };
 		89D1404F292E26CE000F8C51 /* capillaryslack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D14044292E26CE000F8C51 /* capillaryslack.framework */; };
 		89D14054292E26CE000F8C51 /* capillaryslackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14053292E26CE000F8C51 /* capillaryslackTests.swift */; };
 		89D14055292E26CE000F8C51 /* capillaryslack.h in Headers */ = {isa = PBXBuildFile; fileRef = 89D14047292E26CE000F8C51 /* capillaryslack.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		893F8C7B2930925C0020DEDE /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
+		893F8C7D2930925C0020DEDE /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
 		89D14044292E26CE000F8C51 /* capillaryslack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = capillaryslack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D14047292E26CE000F8C51 /* capillaryslack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = capillaryslack.h; sourceTree = "<group>"; };
 		89D1404E292E26CE000F8C51 /* capillaryslackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = capillaryslackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +155,8 @@
 		89D14046292E26CE000F8C51 /* capillaryslack */ = {
 			isa = PBXGroup;
 			children = (
+				893F8C7B2930925C0020DEDE /* RSA.h */,
+				893F8C7D2930925C0020DEDE /* RSA.m */,
 				89D1406D292E26F4000F8C51 /* Asn1Parser.swift */,
 				89D14062292E26F4000F8C51 /* capillaryios-Bridging-Header.h */,
 				89D1406E292E26F4000F8C51 /* capillaryios.swift */,
@@ -188,6 +194,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				893F8C7E2930925C0020DEDE /* RSA.h in Headers */,
 				89D14055292E26CE000F8C51 /* capillaryslack.h in Headers */,
 				89D14074292E26F4000F8C51 /* capillaryios-Bridging-Header.h in Headers */,
 			);
@@ -398,6 +405,7 @@
 				89D14080292E26F4000F8C51 /* capillaryios.swift in Sources */,
 				89D1407E292E26F4000F8C51 /* Key.swift in Sources */,
 				89D14079292E26F4000F8C51 /* Message.swift in Sources */,
+				893F8C802930925C0020DEDE /* RSA.m in Sources */,
 				89D14073292E26F4000F8C51 /* PrivateKey.swift in Sources */,
 				89D14075292E26F4000F8C51 /* ClearMessage.swift in Sources */,
 			);
@@ -515,6 +523,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -571,6 +580,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -602,6 +612,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -631,6 +642,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

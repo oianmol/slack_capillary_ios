@@ -12,11 +12,12 @@ class RSAKeyManager {
     public static let KEY_SIZE = 2048
     var isTest: Bool = false
     private var publicKey, privateKey: SecKey?
-        
+    let rsa = RSA.sharedInstance()
     static let shared = RSAKeyManager()
     let exportImportManager = CryptoExportImportManager()
     
     func setIsTest(isTest:Bool){
+        rsa?.setTest(isTest)
         self.isTest = isTest
     }
     

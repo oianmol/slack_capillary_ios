@@ -8,7 +8,7 @@
 import Foundation
 
 @objc public class CapillaryIOS: NSObject {
-    
+
     @objc public class func setIsTest(isTest:Bool) {
         RSAKeyManager.shared.setIsTest(isTest: isTest)
     }
