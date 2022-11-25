@@ -149,8 +149,8 @@ class RSAKeyManager {
     public func generateKeyPair(chainId:String) {
         do{
             let keyPair = try SwiftyRSA.generateRSAKeyPair(sizeInBits: RSAKeyManager.KEY_SIZE,applyUnitTestWorkaround: isTest,tagData: chainId)
-            publicKey =  try  SwiftyRSA.addKey(keyPair.publicKey.data(), isPublic: true, tag: chainId)
-            privateKey =  try SwiftyRSA.addKey(keyPair.privateKey.data(), isPublic: false, tag: chainId)
+            publicKey =  keyPair.publicKey.reference
+            privateKey =  keyPair.privateKey.reference
         } catch let error {
             debugPrint(error)
         }
