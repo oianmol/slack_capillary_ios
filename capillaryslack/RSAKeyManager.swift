@@ -179,7 +179,7 @@ class RSAKeyManager {
         guard let pubKey = self.getMyPublicKey(chainId:chainId)  else {
             return nil
         }
-        return try! pubKey.data()
+        return exportImportManager.exportRSAPublicKeyToDER(try! pubKey.data(), keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
     }
     
     public func getMyPrivateKeyData(chainId:String) -> Data? {
@@ -187,7 +187,7 @@ class RSAKeyManager {
             return nil
         }
         let privateKeyFinal = try! SwiftyRSA.addPKCS8Header(privateKey.data())
-        return  try! privateKey.data()
+        return privateKeyFinal
     }
     
     //Delete keys when required.
