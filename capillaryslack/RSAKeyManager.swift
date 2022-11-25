@@ -179,7 +179,7 @@ class RSAKeyManager {
         guard let pubKey = self.getMyPublicKey(chainId:chainId)  else {
             return nil
         }
-        return exportImportManager.exportPublicKeyToDER(try! pubKey.data(), keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
+        return exportImportManager.exportRSAPublicKeyToDER(try! pubKey.data(), keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
     }
     
     public func getMyPrivateKeyData(chainId:String) -> Data? {
