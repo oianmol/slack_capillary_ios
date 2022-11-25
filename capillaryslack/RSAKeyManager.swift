@@ -7,6 +7,7 @@
 
 import Foundation
 import Security
+import CryptorRSA
 
 class RSAKeyManager {
     public static let KEY_SIZE = 2048
@@ -179,7 +180,7 @@ class RSAKeyManager {
         guard let pubKey = self.getMyPublicKey(chainId:chainId)  else {
             return nil
         }
-        return exportImportManager.exportRSAPublicKeyToDER(try! pubKey.data(), keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
+        return try! CryptorRSA.addX509CertificateHeader(for: pubKey.data())
     }
     
     public func getMyPrivateKeyData(chainId:String) -> Data? {

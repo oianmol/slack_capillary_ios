@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		893F8C752930868F0020DEDE /* CryptorRSA in Frameworks */ = {isa = PBXBuildFile; productRef = 893F8C742930868F0020DEDE /* CryptorRSA */; };
 		89D1404F292E26CE000F8C51 /* capillaryslack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D14044292E26CE000F8C51 /* capillaryslack.framework */; };
 		89D14054292E26CE000F8C51 /* capillaryslackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14053292E26CE000F8C51 /* capillaryslackTests.swift */; };
 		89D14055292E26CE000F8C51 /* capillaryslack.h in Headers */ = {isa = PBXBuildFile; fileRef = 89D14047292E26CE000F8C51 /* capillaryslack.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -92,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				893F8C752930868F0020DEDE /* CryptorRSA in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +212,9 @@
 			dependencies = (
 			);
 			name = capillaryslack;
+			packageProductDependencies = (
+				893F8C742930868F0020DEDE /* CryptorRSA */,
+			);
 			productName = capillaryslack;
 			productReference = 89D14044292E26CE000F8C51 /* capillaryslack.framework */;
 			productType = "com.apple.product-type.framework";
@@ -324,6 +329,9 @@
 				Base,
 			);
 			mainGroup = 89D1403A292E26CE000F8C51;
+			packageReferences = (
+				893F8C732930868F0020DEDE /* XCRemoteSwiftPackageReference "BlueRSA" */,
+			);
 			productRefGroup = 89D14045292E26CE000F8C51 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -856,6 +864,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		893F8C732930868F0020DEDE /* XCRemoteSwiftPackageReference "BlueRSA" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/BlueRSA";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		893F8C742930868F0020DEDE /* CryptorRSA */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 893F8C732930868F0020DEDE /* XCRemoteSwiftPackageReference "BlueRSA" */;
+			productName = CryptorRSA;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89D1403B292E26CE000F8C51 /* Project object */;
 }

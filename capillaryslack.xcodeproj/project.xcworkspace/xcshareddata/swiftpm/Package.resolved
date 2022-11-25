@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "bluersa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kitura/BlueRSA",
+      "state" : {
+        "revision" : "440f78db26d8bb073f29590f1c7bd31004da09ae",
+        "version" : "1.0.201"
+      }
+    }
+  ],
+  "version" : 2
+}
