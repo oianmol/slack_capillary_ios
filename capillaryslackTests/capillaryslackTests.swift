@@ -33,14 +33,6 @@ final class capillaryslackTests: XCTestCase {
         
         let str = String(decoding: decrypted!, as: UTF8.self)
         XCTAssertEqual(str, "anmol")
-        
-        
-        let publicKeyFromBytes = CapillaryIOS.publicKeyFromBytes(data: publicKey!)
-        let privateKeyFromBytes = CapillaryIOS.privateKeyFromBytes(data: privateKey)
-        
-        let encryptedNext = CapillaryIOS.encrypt(data: "anmolverma".data(using: .utf8)!, publicKey: publicKeyFromBytes!)
-        let decryptedNext = CapillaryIOS.decrypt(data: encryptedNext!, privateKey: privateKeyFromBytes!)
-        XCTAssertEqual(String(decoding: decryptedNext!, as: UTF8.self), "anmolverma")
     }
 
     func testPerformanceExample() throws {

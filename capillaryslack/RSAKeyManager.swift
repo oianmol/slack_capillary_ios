@@ -46,7 +46,8 @@ class RSAKeyManager {
     public func decrypt(encryptedMessage:Data,privateKey:Data) -> Data? {
         do {
             let encrypted = EncryptedMessage(data: encryptedMessage)
-            let clear = try encrypted.decrypted(with: PrivateKey(data:privateKey), padding: .OAEP)
+            let privateKey = try PrivateKey(data:privateKey)
+            let clear = try encrypted.decrypted(with: privateKey, padding: .OAEP)
             return clear.data
         } catch let error {
             //Log error
@@ -97,42 +98,20 @@ class RSAKeyManager {
         return nil
     }
     
-    public func getPublicKey(pemEncoded: String) -> PublicKey? {
-        do {
-            return try PublicKey(pemEncoded: pemEncoded)
-        } catch let error {
-            debugPrint(error)
-            return nil
-        }
-    }
-    
-    public func getPublicKey(data: Data) -> PublicKey? {
+    public func getPublicKey(data: Data) -> Data? {
         do {
             let publicKey_with_X509_header = try SwiftyRSA.prependX509KeyHeader(keyData: data)
-            let publicKey = try PublicKey(data: publicKey_with_X509_header)
-            return publicKey
+            return publicKey_with_X509_header
         } catch let error {
             debugPrint(error)
             return nil
         }
     }
     
-    public func getPublicKey(secRef: SecKey) -> PublicKey? {
+    public func getPrivateKey(data: Data) -> Data? {
         do {
-            let publicKey = try PublicKey(reference: secRef)
-            let publicKeyData = try publicKey.data()
-            let publicKey_with_X509_header = try SwiftyRSA.prependX509KeyHeader(keyData: publicKeyData)
-            return try PublicKey(data: publicKey_with_X509_header)
-        } catch let error {
-            debugPrint(error)
-            return nil
-        }
-    }
-    
-    public func getPrivateKey(data: Data) -> PrivateKey? {
-        do {
-            let privateKey =  try PrivateKey(data: data)
-            return privateKey
+           // let privateKeyFinal = SwiftyRSA.addPKCS8Header(data)
+            return try! PrivateKey(data: data).data()
         } catch let error {
             debugPrint(error)
             return nil
@@ -179,7 +158,7 @@ class RSAKeyManager {
         guard let pubKey = self.getMyPublicKey(chainId:chainId)  else {
             return nil
         }
-        return try! SwiftyRSA.addX509CertificateHeader(for: pubKey.data())
+        return try! SwiftyRSA.prependX509KeyHeader(keyData: pubKey.data())
     }
     
     public func getMyPrivateKeyData(chainId:String) -> Data? {

@@ -34,11 +34,11 @@ import Foundation
     }
     
     @objc public class func publicKeyFromBytes(data:Data) -> Data? {
-        return try! RSAKeyManager.shared.getPublicKey(data: data)?.data()
+        return RSAKeyManager.shared.getPublicKey(data: data)
     }
     
     @objc public class func privateKeyFromBytes(data:Data) -> Data? {
-        return try! RSAKeyManager.shared.getPrivateKey(data: data)?.data()
+        return RSAKeyManager.shared.getPrivateKey(data: data)
     }
 
 }
