@@ -34,7 +34,7 @@ class RSAKeyManager {
         do {
            let publicKeyRef = exportImportManager.exportRSAPublicKeyToDER(publicKey, keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
             let clear = ClearMessage(data: data)
-            let encryptedMessage = try clear.encrypted(with: PublicKey(data: publicKeyRef), padding: .OAEP)
+            let encryptedMessage = try clear.encrypted(with: PublicKey(data: publicKeyRef), padding: .PKCS1)
             return encryptedMessage.data
         } catch let error {
             //Log error
@@ -48,7 +48,7 @@ class RSAKeyManager {
         do {
             let encrypted = EncryptedMessage(data: encryptedMessage)
             let privateKey = try PrivateKey(data:privateKey)
-            let clear = try encrypted.decrypted(with: privateKey, padding: .OAEP)
+            let clear = try encrypted.decrypted(with: privateKey, padding: .PKCS1)
             return clear.data
         } catch let error {
             //Log error
