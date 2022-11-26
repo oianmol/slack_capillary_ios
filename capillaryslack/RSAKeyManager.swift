@@ -45,16 +45,10 @@ class RSAKeyManager {
     }
     
     public func decrypt(encryptedMessage:Data,privateKey:Data) -> Data? {
-        do {
-            let encrypted = EncryptedMessage(data: encryptedMessage)
-            let privateKey = try PrivateKey(data:privateKey)
-            let clear = try encrypted.decrypted(with: privateKey, padding: .OAEP)
-            return clear.data
-        } catch let error {
-            //Log error
-            debugPrint(error)
-            return nil
-        }
+        let encrypted = EncryptedMessage(data: encryptedMessage)
+        let privateKey = try! PrivateKey(data:privateKey)
+        let clear = try! encrypted.decrypted(with: privateKey, padding: .OAEP)
+        return clear.data
     }
     
     public func getMyPublicKey(chainId:String) -> PublicKey? {
