@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89B7AD7829348BDB00EB4530 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B7AD7729348BDB00EB4530 /* Security.framework */; };
+		89B7AD7E29349D3300EB4530 /* EncryptedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B7AD7D29349D3300EB4530 /* EncryptedData.swift */; };
 		89D1404F292E26CE000F8C51 /* capillaryslack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D14044292E26CE000F8C51 /* capillaryslack.framework */; };
 		89D14054292E26CE000F8C51 /* capillaryslackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D14053292E26CE000F8C51 /* capillaryslackTests.swift */; };
 		89D14055292E26CE000F8C51 /* capillaryslack.h in Headers */ = {isa = PBXBuildFile; fileRef = 89D14047292E26CE000F8C51 /* capillaryslack.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +29,7 @@
 		89D1407F292E26F4000F8C51 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406D292E26F4000F8C51 /* Asn1Parser.swift */; };
 		89D14080292E26F4000F8C51 /* capillaryios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406E292E26F4000F8C51 /* capillaryios.swift */; };
 		89D14081292E26F4000F8C51 /* RSAKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1406F292E26F4000F8C51 /* RSAKeyManager.swift */; };
+		ACB9160B4849F9B2F4E30ACF /* Pods_capillaryslack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D66D75E99BBCDAAED0FA0FB /* Pods_capillaryslack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D66D75E99BBCDAAED0FA0FB /* Pods_capillaryslack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capillaryslack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89B7AD7729348BDB00EB4530 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		89B7AD7D29349D3300EB4530 /* EncryptedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedData.swift; sourceTree = "<group>"; };
 		89D14044292E26CE000F8C51 /* capillaryslack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = capillaryslack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D14047292E26CE000F8C51 /* capillaryslack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = capillaryslack.h; sourceTree = "<group>"; };
 		89D1404E292E26CE000F8C51 /* capillaryslackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = capillaryslackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +91,8 @@
 		89D140B4292E2852000F8C51 /* sampleapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D140C3292E2854000F8C51 /* sampleappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D140CD292E2854000F8C51 /* sampleappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2EEF061DAE4B9D2455681FA /* Pods-capillaryslack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capillaryslack.debug.xcconfig"; path = "Target Support Files/Pods-capillaryslack/Pods-capillaryslack.debug.xcconfig"; sourceTree = "<group>"; };
+		ED3EE160606629951939089C /* Pods-capillaryslack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capillaryslack.release.xcconfig"; path = "Target Support Files/Pods-capillaryslack/Pods-capillaryslack.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B7AD7829348BDB00EB4530 /* Security.framework in Frameworks */,
+				ACB9160B4849F9B2F4E30ACF /* Pods_capillaryslack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,12 +137,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89B7AD7629348BDB00EB4530 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89B7AD7729348BDB00EB4530 /* Security.framework */,
+				1D66D75E99BBCDAAED0FA0FB /* Pods_capillaryslack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		89D1403A292E26CE000F8C51 = {
 			isa = PBXGroup;
 			children = (
 				89D14046292E26CE000F8C51 /* capillaryslack */,
 				89D14052292E26CE000F8C51 /* capillaryslackTests */,
 				89D14045292E26CE000F8C51 /* Products */,
+				89B7AD7629348BDB00EB4530 /* Frameworks */,
+				BF8F8C358A8E91193EB48CE1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +190,7 @@
 				89D14069292E26F4000F8C51 /* SwiftyRSAError.swift */,
 				89D14066292E26F4000F8C51 /* X509Certificate.swift */,
 				89D14047292E26CE000F8C51 /* capillaryslack.h */,
+				89B7AD7D29349D3300EB4530 /* EncryptedData.swift */,
 			);
 			path = capillaryslack;
 			sourceTree = "<group>";
@@ -179,6 +201,15 @@
 				89D14053292E26CE000F8C51 /* capillaryslackTests.swift */,
 			);
 			path = capillaryslackTests;
+			sourceTree = "<group>";
+		};
+		BF8F8C358A8E91193EB48CE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2EEF061DAE4B9D2455681FA /* Pods-capillaryslack.debug.xcconfig */,
+				ED3EE160606629951939089C /* Pods-capillaryslack.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89D14058292E26CE000F8C51 /* Build configuration list for PBXNativeTarget "capillaryslack" */;
 			buildPhases = (
+				E9EBC27367D6C1E80624487F /* [CP] Check Pods Manifest.lock */,
 				89D1403F292E26CE000F8C51 /* Headers */,
 				89D14040292E26CE000F8C51 /* Sources */,
 				89D14041292E26CE000F8C51 /* Frameworks */,
@@ -210,8 +242,6 @@
 			dependencies = (
 			);
 			name = capillaryslack;
-			packageProductDependencies = (
-			);
 			productName = capillaryslack;
 			productReference = 89D14044292E26CE000F8C51 /* capillaryslack.framework */;
 			productType = "com.apple.product-type.framework";
@@ -326,8 +356,6 @@
 				Base,
 			);
 			mainGroup = 89D1403A292E26CE000F8C51;
-			packageReferences = (
-			);
 			productRefGroup = 89D14045292E26CE000F8C51 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -379,6 +407,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E9EBC27367D6C1E80624487F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-capillaryslack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		89D14040292E26CE000F8C51 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -395,6 +448,7 @@
 				89D14077292E26F4000F8C51 /* EncryptedMessage.swift in Sources */,
 				89D1407A292E26F4000F8C51 /* CryptoExportImportManager.swift in Sources */,
 				89D1407F292E26F4000F8C51 /* Asn1Parser.swift in Sources */,
+				89B7AD7E29349D3300EB4530 /* EncryptedData.swift in Sources */,
 				89D14080292E26F4000F8C51 /* capillaryios.swift in Sources */,
 				89D1407E292E26F4000F8C51 /* Key.swift in Sources */,
 				89D14079292E26F4000F8C51 /* Message.swift in Sources */,
@@ -582,6 +636,7 @@
 		};
 		89D14059292E26CE000F8C51 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2EEF061DAE4B9D2455681FA /* Pods-capillaryslack.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -612,6 +667,7 @@
 		};
 		89D1405A292E26CE000F8C51 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED3EE160606629951939089C /* Pods-capillaryslack.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -681,7 +737,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"sampleapp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = P3R865242N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -711,7 +767,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"sampleapp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = P3R865242N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
