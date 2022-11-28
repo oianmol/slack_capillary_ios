@@ -3,10 +3,12 @@ Pod::Spec.new do |s|
   s.name = "capillaryslack"
   s.version = "1.0.0"
   s.summary = "Public key RSA encryption."
+  s.dependency 'Tink', '~> 1.6.1'
 
   s.description = <<-DESC
     Encrypt with a RSA public key, decrypt with a RSA private key.
   DESC
+  s.static_framework = true
 
   s.homepage = "https://github.com/oianmol/slack_capillary_ios"
   s.license = "MIT"

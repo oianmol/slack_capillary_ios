@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RSA.h"
+
 //! Project version number for capillaryslack.
 FOUNDATION_EXPORT double capillaryslackVersionNumber;
 

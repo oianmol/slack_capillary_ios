@@ -12,12 +12,10 @@ class RSAKeyManager {
     public static let KEY_SIZE = 2048
     var isTest: Bool = false
     private var publicKey, privateKey: SecKey?
-    let rsa = RSA.sharedInstance()
     static let shared = RSAKeyManager()
     let exportImportManager = CryptoExportImportManager()
     
     func setIsTest(isTest:Bool){
-        rsa?.setTest(isTest)
         self.isTest = isTest
     }
     
@@ -146,6 +144,9 @@ class RSAKeyManager {
     
     //Generate private and public keys
     public func generateKeyPair(chainId:String) {
+        if getKeysFromKeychain(chainId:chainId){
+            return
+        }
         do{
             let keyPair = try SwiftyRSA.generateRSAKeyPair(sizeInBits: RSAKeyManager.KEY_SIZE,applyUnitTestWorkaround: isTest,tagData: chainId)
             publicKey =  keyPair.publicKey.reference
