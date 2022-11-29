@@ -221,7 +221,7 @@ class RSAKeyManager {
     
     public func getPublicKey(data: Data) -> Data? {
         do {
-            return try! PrivateKey(data: stripPublicKeyHeader(data)!).data()
+            return try! PublicKey(data: stripPublicKeyHeader(data)!).data()
         } catch let error {
             debugPrint(error)
             return nil
