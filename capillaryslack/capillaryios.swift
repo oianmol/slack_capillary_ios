@@ -33,7 +33,6 @@ import Tink
     }
         
     @objc public class func encrypt(data:Data,publicKey:Data) -> EncryptedData {
-        
         let symmetricKeyHandle = try! TINKKeysetHandle(keyTemplate: TINKAeadKeyTemplate(keyTemplate: TINKAeadKeyTemplates.TINKAes128Gcm))
         let symmetricKeyBytes = symmetricKeyHandle.serializedKeyset()
         let symmetricKeyCiphertext = RSAKeyManager.shared.encrypt(data: symmetricKeyBytes, publicKey: publicKey)

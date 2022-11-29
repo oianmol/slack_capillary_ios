@@ -30,10 +30,10 @@ class RSAKeyManager {
     
     public func encrypt(data:Data,publicKey:Data) -> Data? {
         do {
-           let publicKeyRef = exportImportManager.exportRSAPublicKeyToDER(publicKey, keyType: kSecAttrKeyTypeRSA as String, keySize: RSAKeyManager.KEY_SIZE)
+            let error:UnsafeMutablePointer<Unmanaged<CFError>?>? = nil
             let clear = ClearMessage(data: data)
-            let encryptedMessage = try clear.encrypted(with: PublicKey(data: publicKeyRef), padding: .PKCS1)
-            return encryptedMessage.data
+            let encryptedMessageData = SecKeyCreateEncryptedData(try PublicKey(data: publicKey).reference, .rsaEncryptionOAEPSHA256, data as CFData, error) as? Data
+            return encryptedMessageData
         } catch let error {
             //Log error
             debugPrint(error)
@@ -44,12 +44,14 @@ class RSAKeyManager {
     
     public func decrypt(encryptedMessage:Data,privateKey:Data) -> Data? {
         do {
-        let encrypted = EncryptedMessage(data: encryptedMessage)
-        let privateKey = try! PrivateKey(data:privateKey)
-        let clear = try! encrypted.decrypted(with: privateKey, padding: .PKCS1)
-        return clear.data
+            let error:UnsafeMutablePointer<Unmanaged<CFError>?>? = nil
+            let encrypted = EncryptedMessage(data: encryptedMessage)
+            let privateKey = try PrivateKey(data:privateKey)
+            let decryptedMessage = SecKeyCreateDecryptedData(privateKey.reference, .rsaEncryptionOAEPSHA256, encryptedMessage as CFData, error) as? Data
+            return decryptedMessage
         } catch let error {
             //Log Error
+            debugPrint(error)
             return nil
         }
     }
