@@ -18,6 +18,14 @@ import Foundation
         self.second = second
     }
     
+    @objc public func firstItem() -> Data? {
+        return first
+    }
+    
+    @objc public func secondItem() -> Data? {
+        return second
+    }
+    
     public convenience init(first: Data?,second:Data?) {
         self.init(first, second)
     }
