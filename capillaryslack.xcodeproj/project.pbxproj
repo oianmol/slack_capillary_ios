@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		893D83762935C1EB00B51CDE /* RsaUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D83752935C1EB00B51CDE /* RsaUtils.swift */; };
 		89B7AD7829348BDB00EB4530 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B7AD7729348BDB00EB4530 /* Security.framework */; };
 		89B7AD7E29349D3300EB4530 /* EncryptedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B7AD7D29349D3300EB4530 /* EncryptedData.swift */; };
 		89D1404F292E26CE000F8C51 /* capillaryslack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D14044292E26CE000F8C51 /* capillaryslack.framework */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		1D66D75E99BBCDAAED0FA0FB /* Pods_capillaryslack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capillaryslack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		893D83752935C1EB00B51CDE /* RsaUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsaUtils.swift; sourceTree = "<group>"; };
 		89B7AD7729348BDB00EB4530 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		89B7AD7D29349D3300EB4530 /* EncryptedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedData.swift; sourceTree = "<group>"; };
 		89D14044292E26CE000F8C51 /* capillaryslack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = capillaryslack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 				89D14066292E26F4000F8C51 /* X509Certificate.swift */,
 				89D14047292E26CE000F8C51 /* capillaryslack.h */,
 				89B7AD7D29349D3300EB4530 /* EncryptedData.swift */,
+				893D83752935C1EB00B51CDE /* RsaUtils.swift */,
 			);
 			path = capillaryslack;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				89D1407C292E26F4000F8C51 /* Data+SHA.swift in Sources */,
 				89D14077292E26F4000F8C51 /* EncryptedMessage.swift in Sources */,
 				89D1407A292E26F4000F8C51 /* CryptoExportImportManager.swift in Sources */,
+				893D83762935C1EB00B51CDE /* RsaUtils.swift in Sources */,
 				89D1407F292E26F4000F8C51 /* Asn1Parser.swift in Sources */,
 				89B7AD7E29349D3300EB4530 /* EncryptedData.swift in Sources */,
 				89D14080292E26F4000F8C51 /* capillaryios.swift in Sources */,
