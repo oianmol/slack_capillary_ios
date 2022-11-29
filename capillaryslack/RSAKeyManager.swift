@@ -107,8 +107,7 @@ class RSAKeyManager {
     
     public func getPrivateKey(data: Data) -> Data? {
         do {
-           let privateKeyFinal = SwiftyRSA.addPKCS8Header(data)
-            return try! PrivateKey(data: privateKeyFinal).data()
+            return data
         } catch let error {
             debugPrint(error)
             return nil
