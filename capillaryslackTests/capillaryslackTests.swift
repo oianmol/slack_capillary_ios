@@ -29,7 +29,7 @@ final class capillaryslackTests: XCTestCase {
         let privateKey = CapillaryIOS.privateKey(chainId: "anmol")!
         
         let publicKeyJVM = CapillaryIOS.publicKeyFromBytes(data: Data(bytes:publicArray,count: publicArray.count))
-        let privateKeyJvm =  CapillaryIOS.publicKeyFromBytes(data: Data(bytes:privateArray,count: privateArray.count))
+        let privateKeyJvm =  CapillaryIOS.privateKeyFromBytes(data: Data(bytes:privateArray,count: privateArray.count))
         let encryptedChannelPrivateKey = CapillaryIOS.encrypt(data: privateKeyJvm!, publicKey: publicKey!)
         
         let decryptedChannelPrivateKey = CapillaryIOS.decrypt(symmetricKeyCiphertext: encryptedChannelPrivateKey.first!, payloadCiphertext: encryptedChannelPrivateKey.second!, privateKey: privateKey)
