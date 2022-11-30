@@ -164,8 +164,7 @@ class RSAKeyManager {
         guard let privateKey = self.getMyPrivateKey(chainId:chainId)  else {
             return nil
         }
-        let privateKeyFinal = try! SwiftyRSA.addPKCS8Header(privateKey.data())
-        return privateKeyFinal
+        return try! privateKey.data()
     }
     
     //Delete keys when required.
