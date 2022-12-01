@@ -30,8 +30,12 @@ class RSAKeyManager {
     
     public func encrypt(data:Data,publicKey:Data) -> Data? {
         do {
-            let error:UnsafeMutablePointer<Unmanaged<CFError>?>? = nil
-            let encryptedMessageData = SecKeyCreateEncryptedData(try PublicKey(data: publicKey).reference, .rsaEncryptionOAEPSHA512, data as CFData, error) as? Data
+            var error: Unmanaged<CFError>? = nil
+            let encryptedMessageData = SecKeyCreateEncryptedData(try PublicKey(data: publicKey).reference, .rsaEncryptionOAEPSHA512, data as CFData, &error) as? Data
+            if let error = error {
+                   print("Can't encrypt. %@", (error.takeRetainedValue() as Error).localizedDescription)
+                   return nil
+               }
             return encryptedMessageData
         } catch let error {
             //Log error
@@ -43,9 +47,13 @@ class RSAKeyManager {
     
     public func decrypt(encryptedMessage:Data,privateKey:Data) -> Data? {
         do {
-            let error:UnsafeMutablePointer<Unmanaged<CFError>?>? = nil
+            var error: Unmanaged<CFError>? = nil
             let privateKey = try PrivateKey(data:privateKey)
-            let decryptedMessage = SecKeyCreateDecryptedData(privateKey.reference, .rsaEncryptionOAEPSHA512, encryptedMessage as CFData, error) as? Data
+            let decryptedMessage = SecKeyCreateDecryptedData(privateKey.reference, .rsaEncryptionOAEPSHA512, encryptedMessage as CFData, &error) as? Data
+            if let error = error {
+                   print("Can't decrypt. %@", (error.takeRetainedValue() as Error).localizedDescription)
+                   return nil
+               }
             return decryptedMessage
         } catch let error {
             //Log Error
