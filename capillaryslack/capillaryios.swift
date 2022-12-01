@@ -38,14 +38,14 @@ import Tink
         let symmetricKeyCiphertext = RSAKeyManager.shared.encrypt(data: symmetricKeyBytes, publicKey: publicKey)
         let aead = try! TINKAeadFactory.primitive(with: symmetricKeyHandle)
         let payloadCiphertext = try! aead.encrypt(data, withAdditionalData: Data(count: 0))
-        return EncryptedData(first: symmetricKeyCiphertext ?? nil , second: payloadCiphertext )
+        return EncryptedData(first: symmetricKeyCiphertext?.base64EncodedString() ?? nil , second: payloadCiphertext.base64EncodedString() )
     }
     
-    @objc public class func decrypt(symmetricKeyCiphertext:Data, payloadCiphertext:Data, privateKey:Data) -> Data? {
-        let symmetricKeyBytes =  RSAKeyManager.shared.decrypt(encryptedMessage: symmetricKeyCiphertext, privateKey: privateKey)
+    @objc public class func decrypt(symmetricKeyCiphertext:String, payloadCiphertext:String, privateKey:Data) -> Data? {
+        let symmetricKeyBytes =  RSAKeyManager.shared.decrypt(encryptedMessage: NSData(base64Encoded: symmetricKeyCiphertext,options: .ignoreUnknownCharacters)! as Data, privateKey: privateKey)
         let symmetricKeyHandle = try! TINKKeysetHandle(cleartextKeysetHandleWith: TINKBinaryKeysetReader(serializedKeyset: symmetricKeyBytes!))
         let aead = try! TINKAeadFactory.primitive(with: symmetricKeyHandle)
-        return try! aead.decrypt(payloadCiphertext, withAdditionalData: Data(count: 0))
+        return try! aead.decrypt(NSData(base64Encoded: payloadCiphertext,options: .ignoreUnknownCharacters)! as Data, withAdditionalData: Data(count: 0))
     }
     
     @objc public class func publicKeyFromBytes(data:Data) -> Data? {
