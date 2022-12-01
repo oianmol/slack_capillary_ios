@@ -139,15 +139,15 @@ public enum SwiftyRSA {
             ]
         ]
         
-        var error: Unmanaged<CFError>?
-        guard let privKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error),
-            let pubKey = SecKeyCopyPublicKey(privKey) else {
-            throw SwiftyRSAError.keyGenerationFailed(error: error?.takeRetainedValue())
-        }
-        let privateKey = try PrivateKey(reference: privKey)
-        let publicKey = try PublicKey(reference: pubKey)
         
-        return (privateKey: privateKey, publicKey: publicKey)
+        var pubKey: SecKey?
+        var privKey: SecKey?
+        
+        let status = SecKeyGeneratePair(attributes as CFDictionary, &pubKey, &privKey)
+        
+        print("generateKeyPair() - \(status)")
+
+        return (privateKey: try PrivateKey(reference: privKey!), publicKey: try PublicKey(reference: pubKey!))
     }
     
     static func addKey(_ keyData: Data, isPublic: Bool, tag: String) throws ->  SecKey {
