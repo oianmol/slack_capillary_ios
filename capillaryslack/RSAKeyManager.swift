@@ -157,6 +157,8 @@ class RSAKeyManager {
             let keyPair = try SwiftyRSA.generateRSAKeyPair(sizeInBits: RSAKeyManager.KEY_SIZE,applyUnitTestWorkaround: isTest,tagData: chainId)
             publicKey =  keyPair.publicKey.reference
             privateKey =  keyPair.privateKey.reference
+            try SwiftyRSA.addKey(keyPair.publicKey.data(), isPublic: true, tag: chainId)
+            try SwiftyRSA.addKey(keyPair.privateKey.data(), isPublic: false, tag: chainId)
         } catch let error {
             debugPrint(error)
         }
