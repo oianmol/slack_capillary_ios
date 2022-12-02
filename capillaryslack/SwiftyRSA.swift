@@ -114,16 +114,14 @@ public enum SwiftyRSA {
     /// - Returns: A touple of a private and public key
     /// - Throws: Throws and error if the tag cant be parsed or if keygeneration fails
     @available(iOS 10.0, watchOS 3.0, tvOS 10.0, *)
-    public static func generateRSAKeyPair(sizeInBits size: Int,tagData:String) throws -> (privateKey: PrivateKey, publicKey: PublicKey) {
-        return try generateRSAKeyPair(sizeInBits: size, applyUnitTestWorkaround: false,tagData:tagData)
+    public static func generateRSAKeyPair(sizeInBits size: Int,chainId:String) throws -> (privateKey: PrivateKey, publicKey: PublicKey) {
+        return try generateRSAKeyPair(sizeInBits: size, applyUnitTestWorkaround: false,chainId: chainId)
     }
     
     @available(iOS 10.0, watchOS 3.0, tvOS 10.0, *)
-    static func generateRSAKeyPair(sizeInBits size: Int, applyUnitTestWorkaround: Bool = false,tagData:String) throws -> (privateKey: PrivateKey, publicKey: PublicKey) {
+    static func generateRSAKeyPair(sizeInBits size: Int, applyUnitTestWorkaround: Bool = false,chainId:String) throws -> (privateKey: PrivateKey, publicKey: PublicKey) {
       
-        guard let tagData = tagData.data(using: .utf8) else {
-            throw SwiftyRSAError.stringToDataConversionFailed
-        }
+    
         
         // @hack Don't store permanently when running unit tests, otherwise we'll get a key creation error (NSOSStatusErrorDomain -50)
         // @see http://www.openradar.me/36809637
@@ -133,21 +131,25 @@ public enum SwiftyRSA {
         let attributes: [CFString: Any] = [
             kSecAttrKeyType: kSecAttrKeyTypeRSA,
             kSecAttrKeySizeInBits: size,
-            kSecPrivateKeyAttrs: [
+            kSecPrivateKeyAttrs : [
                 kSecAttrIsPermanent: isPermanent,
-                kSecAttrApplicationTag: tagData
+                kSecAttrApplicationTag: "\(chainId).private"
+            ],
+            kSecPublicKeyAttrs : [
+                kSecAttrIsPermanent: isPermanent,
+                kSecAttrApplicationTag: "\(chainId).public"
             ]
         ]
         
+        var error: Unmanaged<CFError>?
+        guard let privKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error),
+            let pubKey = SecKeyCopyPublicKey(privKey) else {
+            throw SwiftyRSAError.keyGenerationFailed(error: error?.takeRetainedValue())
+        }
+        let privateKey = try PrivateKey(reference: privKey)
+        let publicKey = try PublicKey(reference: pubKey)
         
-        var pubKey: SecKey?
-        var privKey: SecKey?
-        
-        let status = SecKeyGeneratePair(attributes as CFDictionary, &pubKey, &privKey)
-        
-        print("generateKeyPair() - \(status)")
-
-        return (privateKey: try PrivateKey(reference: privKey!), publicKey: try PublicKey(reference: pubKey!))
+        return (privateKey: privateKey, publicKey: publicKey)
     }
     
     static func addKey(_ keyData: Data, isPublic: Bool, tag: String) throws ->  SecKey {
@@ -160,63 +162,47 @@ public enum SwiftyRSA {
         
         let keyClass = isPublic ? kSecAttrKeyClassPublic : kSecAttrKeyClassPrivate
         
-        // On iOS 10+, we can use SecKeyCreateWithData without going through the keychain
-        if #available(iOS 10.0, *), #available(watchOS 3.0, *), #available(tvOS 10.0, *) {
-            
-            let sizeInBits = keyData.count * 8
-            let keyDict: [CFString: Any] = [
-                kSecAttrKeyType: kSecAttrKeyTypeRSA,
-                kSecAttrKeyClass: keyClass,
-                kSecAttrKeySizeInBits: NSNumber(value: sizeInBits),
-                kSecReturnPersistentRef: true
-            ]
-            
-            var error: Unmanaged<CFError>?
-            guard let key = SecKeyCreateWithData(keyData as CFData, keyDict as CFDictionary, &error) else {
-                throw SwiftyRSAError.keyCreateFailed(error: error?.takeRetainedValue())
-            }
-            return key
-            
-        // On iOS 9 and earlier, add a persistent version of the key to the system keychain
-        } else {
-            
-            let persistKey = UnsafeMutablePointer<AnyObject?>(mutating: nil)
-            
-            let keyAddDict: [CFString: Any] = [
-                kSecClass: kSecClassKey,
-                kSecAttrApplicationTag: tagData,
-                kSecAttrKeyType: kSecAttrKeyTypeRSA,
-                kSecValueData: keyData,
-                kSecAttrKeyClass: keyClass,
-                kSecReturnPersistentRef: true,
-                kSecAttrAccessible: kSecAttrAccessibleAfterFirstUnlock
-            ]
-            
-            let addStatus = SecItemAdd(keyAddDict as CFDictionary, persistKey)
-            guard addStatus == errSecSuccess || addStatus == errSecDuplicateItem else {
-                throw SwiftyRSAError.keyAddFailed(status: addStatus)
-            }
-            
-            let keyCopyDict: [CFString: Any] = [
-                kSecClass: kSecClassKey,
-                kSecAttrApplicationTag: tagData,
-                kSecAttrKeyType: kSecAttrKeyTypeRSA,
-                kSecAttrKeyClass: keyClass,
-                kSecAttrAccessible: kSecAttrAccessibleAfterFirstUnlock,
-                kSecReturnRef: true,
-            ]
-            
-            // Now fetch the SecKeyRef version of the key
-            var keyRef: AnyObject?
-            let copyStatus = SecItemCopyMatching(keyCopyDict as CFDictionary, &keyRef)
-            
-            guard let unwrappedKeyRef = keyRef else {
-                throw SwiftyRSAError.keyCopyFailed(status: copyStatus)
-            }
-            
-            return unwrappedKeyRef as! SecKey // swiftlint:disable:this force_cast
+        let sizeInBits = keyData.count * 8
+        let keyDict: [CFString: Any] = [
+            kSecAttrKeyType: kSecAttrKeyTypeRSA,
+            kSecAttrKeyClass: keyClass,
+            kSecAttrKeySizeInBits: NSNumber(value: sizeInBits),
+            kSecReturnPersistentRef: true,
+            kSecAttrApplicationTag: tagData,
+        ]
+        
+        var error: Unmanaged<CFError>?
+        guard let key = SecKeyCreateWithData(keyData as CFData, keyDict as CFDictionary, &error) else {
+            throw SwiftyRSAError.keyCreateFailed(error: error?.takeRetainedValue())
         }
+        return key
     }
+    
+    //Check Keychain and get keys
+       static func getKeysFromKeychain(chainId:String) -> Bool {
+           let tagData = chainId.data(using: .utf8)
+           let privateKey = getKeyTypeInKeyChain(tag: tagData!,keyClass: kSecAttrKeyClassPublic as String)
+           let publicKey =  getKeyTypeInKeyChain(tag: tagData!,keyClass: kSecAttrKeyClassPrivate as String)
+           return ((privateKey != nil)&&(publicKey != nil))
+       }
+       
+    static  func getKeyTypeInKeyChain(tag : Data,keyClass:String) -> SecKey? {
+           let query: [CFString: Any] = [
+               kSecClass: kSecClassKey,
+               kSecAttrKeyType: kSecAttrKeyTypeRSA,
+               kSecAttrKeyClass: keyClass,
+               kSecAttrApplicationTag: tag,
+               kSecReturnRef: true,
+           ]
+           
+           var result : AnyObject?
+           let status = SecItemCopyMatching(query as CFDictionary, &result)
+           
+           if status == errSecSuccess {
+               return result as! SecKey?
+           }
+           return nil
+       }
     
     /**
      This method strips the x509 header from a provided ASN.1 DER key.
@@ -314,57 +300,6 @@ public enum SwiftyRSA {
         } else { // invalideHeader
             throw SwiftyRSAError.x509CertificateFailed
         }
-    }
-
-    
-    static func addPKCS8Header(_ derKey: Data) -> Data {
-        var result = Data()
-
-        let encodingLength: Int = encodedOctets(derKey.count + 1).count
-        let OID: [UInt8] = [0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86,
-                            0xf7, 0x0d, 0x01, 0x01, 0x01, 0x05, 0x00]
-
-        var builder: [UInt8] = []
-
-        // ASN.1 SEQUENCE
-        builder.append(0x30)
-
-        // Overall size, made of OID + bitstring encoding + actual key
-        let size = OID.count + 2 + encodingLength + derKey.count
-        let encodedSize = encodedOctets(size)
-        builder.append(contentsOf: encodedSize)
-        result.append(builder, count: builder.count)
-        result.append(OID, count: OID.count)
-        builder.removeAll(keepingCapacity: false)
-
-        builder.append(0x03)
-        builder.append(contentsOf: encodedOctets(derKey.count + 1))
-        builder.append(0x00)
-        result.append(builder, count: builder.count)
-
-        // Actual key bytes
-        result.append(derKey)
-
-        return result
-    }
-
-    static func encodedOctets(_ int: Int) -> [UInt8] {
-        // Short form
-        if int < 128 {
-            return [UInt8(int)]
-        }
-
-        // Long form
-        let i = (int / 256) + 1
-        var len = int
-        var result: [UInt8] = [UInt8(i + 0x80)]
-
-        for _ in 0..<i {
-            result.insert(UInt8(len & 0xFF), at: 1)
-            len = len >> 8
-        }
-
-        return result
     }
     
     static func removeKey(tag: String) {
