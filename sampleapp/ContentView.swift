@@ -22,6 +22,9 @@ struct ContentView: View {
         
         let decrypted = CapillaryIOS.decrypt(symmetricKeyCiphertext: encrypted.first!, payloadCiphertext: encrypted.second!, privateKey: privateKey)
         
+        print((publicKey! as NSData).base64EncodedString())
+        print((privateKey as NSData).base64EncodedString())
+       
      
         if let str = NSString(data: decrypted!, encoding: NSUTF8StringEncoding) as? String {
             print(str)
