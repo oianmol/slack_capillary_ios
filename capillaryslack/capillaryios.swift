@@ -24,7 +24,7 @@ import Tink
     
     @objc public class func publicKey(chainId : String) -> Data? {
         let publicKey =  SwiftyRSA.getKeyTypeInKeyChain(tag:  "\(chainId).public".data(using: .utf8)!,keyClass: kSecAttrKeyClassPublic as String)
-        return try! PublicKey(reference: publicKey!).data()
+        return try! SwiftyRSA.prependX509KeyHeader(keyData: PublicKey(reference: publicKey!).data())
     }
     
     @objc public class func privateKey(chainId : String) -> Data? {
