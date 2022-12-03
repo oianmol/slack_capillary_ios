@@ -643,7 +643,7 @@ class StoredKey {
     // List of algorithms for public key encryption.
     private let algorithms:[SecKeyAlgorithm] = [
         .eciesEncryptionStandardX963SHA1AESGCM,
-        .rsaEncryptionOAEPSHA512
+        .rsaEncryptionPKCS1
     ]
     
     private func encryptBasedOnPrivateKey(_ message:Data) throws -> Encrypted
@@ -693,7 +693,7 @@ class StoredKey {
             throw StoredKeyError("No public key.")
         }
         guard let algorithm = algorithms.first(
-            where: { SecKeyIsAlgorithmSupported(publicKey, .encrypt, $0)}
+            where: { SecKeyIsAlgorithmSupported(publicKey, .decrypt, $0)}
             ) else
         {
             throw StoredKeyError("No algorithms supported.")
@@ -715,8 +715,10 @@ class StoredKey {
         guard let publicKey = SecKeyCopyPublicKey(secKey!) else {
             throw StoredKeyError("No public key.")
         }
+        
+        
         guard let algorithm = algorithms.first(
-            where: { SecKeyIsAlgorithmSupported(publicKey, .encrypt, $0)}
+            where: { SecKeyIsAlgorithmSupported(publicKey, .decrypt, $0)}
             ) else
         {
             throw StoredKeyError("No algorithms supported.")

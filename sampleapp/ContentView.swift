@@ -18,7 +18,10 @@ struct ContentView: View {
         let publicKey = CapillaryIOS.publicKey(chainId: "anmol")
         let privateKey = CapillaryIOS.privateKey(chainId: "anmol")!
         
-        let encrypted = CapillaryIOS.encrypt(data: "anmol".data(using: .utf8)!, publicKey: publicKey!)
+        let encrypted = EncryptedData(
+            first:"EJyMgvRqIFJ9SAVLxVR50888pyQfTs51idGNQy1TLx64bYHtVcOqb5TguwO9FJIgx8GcJ1NvA9k6FJAA1WpKv27UFIeoRxMq8vnROaZGsslH/WQDZzYW4g4cUONXH/VTkWjNl6PaxuwR8nw0vSaXCFnQ+f16hbZ1NcwXi29lZE/wVdkV67ojOhTkbQrUlQHip/gZINKg197T6UfPeHg0gq7Db+b0AGNRaK8FyFbwJcFPKdrNSOuQBfnwjyzA6Z5n9FLP5+JagSfBl+u+S5+Ysa4/iI5ccme9mftNwBbEd7JKUMU4E86cnEFf840iNsdrD/ZOylaLHidbOQkNDHTi4w==",
+            second:"AW3zLU1nipSn119na6PtbtSGlBxF9/E8mvtATahjfAIq8m2oxDc="
+        )
         
         let decrypted = CapillaryIOS.decrypt(symmetricKeyCiphertext: encrypted.first!, payloadCiphertext: encrypted.second!, privateKey: privateKey)
         
