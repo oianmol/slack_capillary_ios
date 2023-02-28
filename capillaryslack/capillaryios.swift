@@ -6,13 +6,11 @@
 //
 
 import Foundation
-import Tink
+import CryptoKit
 
 @objc public class CapillaryIOS: NSObject {
     
     @objc public class func initNow(chainId : String, isUnitTest:Bool) {
-        let tinkConfig = try! TINKAllConfig.init()
-        let config = try! TINKAeadConfig.init()
         let keys = try! SwiftyRSA.generateRSAKeyPair(sizeInBits: 2048, applyUnitTestWorkaround: isUnitTest, chainId: chainId)
         let result = try! SwiftyRSA.addKey(keys.privateKey.data(), isPublic: false, tag: "\(chainId).private")
         let resultR = try! SwiftyRSA.addKey(keys.publicKey.data(), isPublic: true, tag: "\(chainId).public")
@@ -29,20 +27,29 @@ import Tink
     }
         
     @objc public class func encrypt(data:Data,publicKey:Data) -> EncryptedData {
-        let symmetricKeyHandle = try! TINKKeysetHandle(keyTemplate: TINKAeadKeyTemplate(keyTemplate: TINKAeadKeyTemplates.TINKAes128Gcm))
-        let symmetricKeyBytes = symmetricKeyHandle.serializedKeyset()
-        let symmetricKeyCiphertext = try! StoredKey(PublicKey(data: publicKey).reference).encryptBytes(symmetricKeyBytes).message
-        let aead = try! TINKAeadFactory.primitive(with: symmetricKeyHandle)
-        let payloadCiphertext = try! aead.encrypt(data, withAdditionalData: Data(count: 0))
+        // we create a symmetric key
+        let symmetricKeyBytes = SymmetricKey(size: .bits256)
+        let cryptedBox = try! ChaChaPoly.seal(data, using: symmetricKeyBytes)
+        let sealedBox = try! ChaChaPoly.SealedBox(combined: cryptedBox.combined)
+        let payloadCiphertext = sealedBox.combined
+        //we encrypt the data with symmtric key
+
+        let symmetricKeyCiphertext = try! StoredKey(PublicKey(data: publicKey).reference).encryptBytes(symmetricKeyBytes.rawRepresentation).message
+        // we encrypte the symmetric key
         return EncryptedData(first: symmetricKeyCiphertext.base64EncodedString(options: []) , second: payloadCiphertext.base64EncodedString(options: []) )
     }
     
-    @objc public class func decrypt(symmetricKeyCiphertext:String, payloadCiphertext:String, privateKey:Data) -> Data? {
-        let symmetricKeyData = Data.fromBase64(symmetricKeyCiphertext)
-        let symmetricKeyBytes = try! StoredKey(PrivateKey(data: privateKey).reference).decryptAsData(symmetricKeyData!)
-         let symmetricKeyHandle = try! TINKKeysetHandle(cleartextKeysetHandleWith: TINKBinaryKeysetReader(serializedKeyset: symmetricKeyBytes))
-        let aead = try! TINKAeadFactory.primitive(with: symmetricKeyHandle)
-        return try! aead.decrypt(Data.fromBase64(payloadCiphertext)!, withAdditionalData: Data(count: 0))
+    @objc public class func decrypt(
+        symmetricKeyCiphertext:String,
+        payloadCiphertext:String,
+        privateKey:Data
+    ) -> Data? {
+        let decryptedSymmetricKeyBytes = try! StoredKey(PrivateKey(data: privateKey).reference).decryptAsData(Data.fromBase64(symmetricKeyCiphertext)!)
+        let symmetricKeyBytes = try! SymmetricKey(rawRepresentation: decryptedSymmetricKeyBytes)
+        
+        let sealedBoxToOpen = try! ChaChaPoly.SealedBox(combined: Data.fromBase64(payloadCiphertext)!)
+        let decryptedData = try! ChaChaPoly.open(sealedBoxToOpen, using: symmetricKeyBytes)
+        return decryptedData
     }
     
     @objc public class func publicKeyFromBytes(data:Data) -> Data? {
