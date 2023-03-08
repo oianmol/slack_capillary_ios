@@ -3,7 +3,6 @@ Pod::Spec.new do |s|
   s.name = "capillaryslack"
   s.version = "1.0.0"
   s.summary = "Public key RSA encryption."
-  s.dependency  'Tink'
   s.static_framework = true
   s.description = <<-DESC
     Encrypt with a RSA public key, decrypt with a RSA private key.
